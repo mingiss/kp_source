@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="XIPA_TDM" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="kernel11">
+				<Option output="bin\kernel11.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-fomit-frame-pointer" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="--no-export-all-symbols" />
+					<Add option="-Wl,--add-stdcall-alias" />
+					<Add option="-Wl,src/tux_api.def" />
+					<Add option="-Wl,-Map,kernel11.map" />
+					<Add library="setupapi" />
+				</Linker>
+			</Target>
+			<Target title="xreg">
+				<Option output="bin\tux_reg.dll" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,-Map,tux_reg.map" />
+					<Add library="kpsttrg" />
+					<Add library="comctl32" />
+					<Add library="comdlg32" />
+					<Add library="gdi32" />
+					<Add library="setupapi" />
+					<Add library="winmm" />
+					<Add library="ws2_32" />
+					<Add library="uuid" />
+					<Add library="ntdll" />
+				</Linker>
+			</Target>
+			<Target title="xdbg">
+				<Option output="bin\tux_dbg.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="1" />
+				<Linker>
+					<Add option="-s" />
+					<Add option="-mwindows" />
+					<Add option="-Wl,-Map,tux_dbg.map" />
+					<Add library="psapi" />
+					<Add library="tux_reg" />
+				</Linker>
+			</Target>
+			<Target title="xipa">
+				<Option output="bin\tux_ipa.bin" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="1" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-mwindows" />
+					<Add option="-Wl,-Map,tux_ipa.map" />
+					<Add library="comctl32" />
+					<Add library="gdi32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="ws2_32" />
+					<Add library="tux_reg" />
+				</Linker>
+			</Target>
+			<Target title="xtools">
+				<Option output="bin\tux_tools.exe" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option projectResourceIncludeDirsRelation="1" />
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,-Map,tux_tools.map" />
+					<Add library="setupapi" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="kernel11;xreg;xdbg;xipa;xtools;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-m32" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add directory="bin" />
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="include\XRegistry.hh" />
+		<Unit filename="include\kpsttre.h" />
+		<Unit filename="include\kpsttrg.h" />
+		<Unit filename="include\tux_api.hh" />
+		<Unit filename="include\tux_core.hh" />
+		<Unit filename="include\tux_dbg.hh" />
+		<Unit filename="include\tux_debug.hh" />
+		<Unit filename="include\tux_fs.hh" />
+		<Unit filename="include\tux_install.hh" />
+		<Unit filename="include\tux_io.hh" />
+		<Unit filename="include\tux_net.hh" />
+		<Unit filename="include\tux_parted.hh" />
+		<Unit filename="include\tux_pdf.hh" />
+		<Unit filename="include\tux_reg.hh" />
+		<Unit filename="include\tux_splash.hh" />
+		<Unit filename="include\tux_sym.hh" />
+		<Unit filename="include\tux_sym.old.hh" />
+		<Unit filename="include\tux_tools.hh" />
+		<Unit filename="include\tux_win.hh" />
+		<Unit filename="include\xarchive_t.hh" />
+		<Unit filename="include\xipa_t.hh" />
+		<Unit filename="res\tux_ipa.rc">
+			<Option compilerVar="WINDRES" />
+			<Option target="xipa" />
+			<Option target="xtools" />
+			<Option target="xdbg" />
+		</Unit>
+		<Unit filename="src\XRegistry.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\main.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\tux_api.cc">
+			<Option target="kernel11" />
+		</Unit>
+		<Unit filename="src\tux_dbg.cc">
+			<Option target="xdbg" />
+		</Unit>
+		<Unit filename="src\tux_debug.cc">
+			<Option target="xipa" />
+			<Option target="kernel11" />
+			<Option target="xdbg" />
+			<Option target="xtools" />
+		</Unit>
+		<Unit filename="src\tux_fs.cc">
+			<Option target="kernel11" />
+			<Option target="xtools" />
+		</Unit>
+		<Unit filename="src\tux_iconizer.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src\tux_install.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\tux_io.cc">
+			<Option target="kernel11" />
+		</Unit>
+		<Unit filename="src\tux_net.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\tux_parted.cc">
+			<Option target="xtools" />
+		</Unit>
+		<Unit filename="src\tux_pdf.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\tux_reg.cc">
+			<Option target="xreg" />
+		</Unit>
+		<Unit filename="src\tux_splash.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\tux_tools.cc">
+			<Option target="xtools" />
+		</Unit>
+		<Unit filename="src\tux_win.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Unit filename="src\xarchive_t.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src\xipa_t.cc">
+			<Option target="xipa" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

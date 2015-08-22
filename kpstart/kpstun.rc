@@ -1,0 +1,6 @@
+#include "res_com.h"
+
+KP_IDI_MAIN_ICON      ICON    DISCARDABLE     "uninst.ico"
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+KP_IDI_OPEN_ICON      ICON    DISCARDABLE     "f:/kp/source/common/open.ico"
+

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tux_gecko" />
+		<Option pch_mode="2" />
+		<Option compiler="xmingw32450" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\tux_gecko" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DNS_WIN32" />
+					<Add option="-DXPCOM_GLUE=1" />
+					<Add option="-DXP_WIN" />
+					<Add directory="include" />
+					<Add directory="include\gecko" />
+					<Add directory="include\gecko\layout" />
+					<Add directory="include\gecko\nspr" />
+					<Add directory="include\gecko\string" />
+					<Add directory="include\gecko\xpcom" />
+					<Add directory="include\gecko\webbrwsr" />
+					<Add directory="include\gecko\widget" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,--out-implib,lib/libtux_gecko.a" />
+					<Add option="-mno-cygwin" />
+					<Add option="--no-export-all-symbols" />
+					<Add library="xpcomglue" />
+					<Add library="comctl32" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\tux_gecko" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-DNS_WIN32" />
+					<Add option="-DXPCOM_GLUE=1" />
+					<Add option="-DXP_WIN" />
+					<Add directory="include" />
+					<Add directory="include\gecko" />
+					<Add directory="include\gecko\layout" />
+					<Add directory="include\gecko\nspr" />
+					<Add directory="include\gecko\string" />
+					<Add directory="include\gecko\xpcom" />
+					<Add directory="include\gecko\webbrwsr" />
+					<Add directory="include\gecko\widget" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,--out-implib,lib/libtux_gecko.a" />
+					<Add option="-mno-cygwin" />
+					<Add option="--no-export-all-symbols" />
+					<Add library="xpcomglue" />
+					<Add library="comctl32" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-mno-cygwin" />
+		</Compiler>
+		<Unit filename="include\IComparable.hh" />
+		<Unit filename="include\IInputStream.hh" />
+		<Unit filename="include\IMap.hh" />
+		<Unit filename="include\IObject.hh" />
+		<Unit filename="include\IString.hh" />
+		<Unit filename="include\IStringMap.hh" />
+		<Unit filename="include\XApplication.hh" />
+		<Unit filename="include\XBinaryMap.hh" />
+		<Unit filename="include\XDebug.hh" />
+		<Unit filename="include\XEvent.hh" />
+		<Unit filename="include\XException.hh" />
+		<Unit filename="include\XGecko.hh" />
+		<Unit filename="include\XGeckoChannel.hh" />
+		<Unit filename="include\XGeckoClipboardDragDropHooks.hh" />
+		<Unit filename="include\XGeckoDOMEvent.hh" />
+		<Unit filename="include\XGeckoDOMEventListener.hh" />
+		<Unit filename="include\XGeckoFactory.hh" />
+		<Unit filename="include\XGeckoInit.hh" />
+		<Unit filename="include\XGeckoInputStream.hh" />
+		<Unit filename="include\XGeckoPopup.hh" />
+		<Unit filename="include\XGeckoProtocolHandler.hh" />
+		<Unit filename="include\XGeckoRequestSuspender.hh" />
+		<Unit filename="include\XGeckoString.hh" />
+		<Unit filename="include\XGeckoUtils.hh" />
+		<Unit filename="include\XGeckoWebBrowserChrome.hh" />
+		<Unit filename="include\XGeckoWindowCreator.hh" />
+		<Unit filename="include\XObject.hh" />
+		<Unit filename="include\XString.hh" />
+		<Unit filename="include\XStringMap.hh" />
+		<Unit filename="include\XToolbar.hh" />
+		<Unit filename="include\XTree.hh" />
+		<Unit filename="include\XTux.hh" />
+		<Unit filename="include\XWidget.hh" />
+		<Unit filename="src\XApplication.cc" />
+		<Unit filename="src\XBinaryMap.cc" />
+		<Unit filename="src\XDebug.cc" />
+		<Unit filename="src\XEvent.cc" />
+		<Unit filename="src\XException.cc" />
+		<Unit filename="src\XGecko.cc" />
+		<Unit filename="src\XGeckoChannel.cc" />
+		<Unit filename="src\XGeckoClipboardDragDropHooks.cc" />
+		<Unit filename="src\XGeckoDOMEvent.cc" />
+		<Unit filename="src\XGeckoDOMEventListener.cc" />
+		<Unit filename="src\XGeckoFactory.cc" />
+		<Unit filename="src\XGeckoInit.cc" />
+		<Unit filename="src\XGeckoInputStream.cc" />
+		<Unit filename="src\XGeckoPopup.cc" />
+		<Unit filename="src\XGeckoProtocolHandler.cc" />
+		<Unit filename="src\XGeckoString.cc" />
+		<Unit filename="src\XGeckoWebBrowserChrome.cc" />
+		<Unit filename="src\XGeckoWindowCreator.cc" />
+		<Unit filename="src\XObject.cc" />
+		<Unit filename="src\XString.cc" />
+		<Unit filename="src\XStringMap.cc" />
+		<Unit filename="src\XToolbar.cc" />
+		<Unit filename="src\XTree.cc" />
+		<Unit filename="src\XTux.cc" />
+		<Unit filename="src\XWidget.cc" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,9 @@
+// ------------------------------
+// kpstpl.rc
+// resursu scenarijus licenciju registravimo pavyzdziui kpstpl.cpp
+//
+
+#include "kpsttrg.h"
+
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "setup.ico"
+

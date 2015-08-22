@@ -1,0 +1,153 @@
+// ------------------------------
+// lzdsh.rc
+//
+#include "envir.h"
+#include "iBshn.h"
+#include "lzdshn.h"
+#include "res_com.h"
+#include "tvxml.h"
+#include "KpPubDlg.h"
+#include "lzdsh.h"
+#include "lzdshl.h"
+#include "lzdshr.h"
+
+// ------------------------
+KP_IDI_NODE_BYPASS_BMP       BITMAP DISCARDABLE    "f:/kp/source/common/node_bypass.bmp"
+KP_IDI_NODE_BOTTOM_BMP       BITMAP DISCARDABLE    "f:/kp/source/common/node_bottom.bmp"
+KP_IDI_NODE_BOTTOM_LAST_BMP  BITMAP DISCARDABLE    "f:/kp/source/common/node_bottom_last.bmp"
+KP_IDI_NODE_OPEN_BMP         BITMAP DISCARDABLE    "f:/kp/source/common/node_open.bmp"
+KP_IDI_NODE_OPEN_LAST_BMP    BITMAP DISCARDABLE    "f:/kp/source/common/node_open_last.bmp"
+KP_IDI_NODE_CLOSED_BMP       BITMAP DISCARDABLE    "f:/kp/source/common/node_closed.bmp"
+KP_IDI_NODE_CLOSED_LAST_BMP  BITMAP DISCARDABLE    "f:/kp/source/common/node_closed_last.bmp"
+KP_IDI_NODE_BYPASS_EMPTY_BMP BITMAP DISCARDABLE    "f:/kp/source/common/node_bypass_empty.bmp"
+
+// ------------------------
+// LZDSH_IDI_BOOK_ICON           ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/book.ico"
+#ifndef LZDSH_DELT
+// LZDSH_IDI_LED_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/led8.ico"
+// LZDSH_IDI_LED_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/led11.ico"
+LZDSH_IDI_LED_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/led9.ico"
+#else
+// LZDSH_IDI_LED_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/delt7.ico"
+LZDSH_IDI_LED_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/DeLt8.ico"
+#endif
+// ------------------------
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+
+#if IBSH_SKIN == IBSH_SKIN_STANDART
+LZDSH_IDI_SEARCH_ICON         ICON     DISCARDABLE    "f:/kp/source/common/search.ico"
+LZDSH_IDI_ZOOM_ICON           ICON     DISCARDABLE    "f:/kp/source/common/zooms.ico"
+LZDSH_IDI_ZOOM_SEL_ICON       ICON     DISCARDABLE    "f:/kp/source/common/zoom.ico"
+LZDSH_IDI_WIDE_ICON           ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/narrow.ico"
+LZDSH_IDI_WIDE_SEL_ICON       ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/wide.ico"
+LZDSH_IDI_ACC_ICON            ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/noacc.ico"
+LZDSH_IDI_ACC_SEL_ICON        ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/accents.ico"
+
+LZDSH_IDI_BACK_ICON           ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/left.ico"
+LZDSH_IDI_FORWARD_ICON        ICON     DISCARDABLE    "f:/kp/source/tev/lzdsh/right.ico"
+
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON
+LZDSH_IDI_SEARCH_BITMAP       BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_srch.bmp"
+LZDSH_IDI_SEARCH_LIGHT_BITMAP BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_srch_light.bmp"
+LZDSH_IDI_SEARCH_SEL_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_srch_sel.bmp"
+LZDSH_IDI_ZOOM_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_zoom.bmp"
+LZDSH_IDI_ZOOM_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_zoom_light.bmp"
+LZDSH_IDI_ZOOM_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_zoom_sel.bmp"
+LZDSH_IDI_WIDE_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_wide.bmp"
+LZDSH_IDI_WIDE_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_wide_light.bmp"
+LZDSH_IDI_WIDE_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_wide_sel.bmp"
+LZDSH_IDI_ACC_BITMAP          BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_acc.bmp"
+LZDSH_IDI_ACC_LIGHT_BITMAP    BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_acc_light.bmp"
+LZDSH_IDI_ACC_SEL_BITMAP      BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_acc_sel.bmp"
+
+LZDSH_IDI_MINIMIZE_BITMAP          BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_min.bmp"
+LZDSH_IDI_MINIMIZE_LIGHT_BITMAP    BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_min_light.bmp"
+LZDSH_IDI_MINIMIZE_SEL_BITMAP      BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_min_sel.bmp"
+LZDSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_exit.bmp"
+LZDSH_IDI_EXIT_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_exit_light.bmp"
+LZDSH_IDI_EXIT_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_exit_sel.bmp"
+
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_LIGHT
+LZDSH_IDI_SEARCH_BITMAP       BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_srch.bmp"
+LZDSH_IDI_ZOOM_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_zoom.bmp"
+LZDSH_IDI_WIDE_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_wide.bmp"
+LZDSH_IDI_ACC_BITMAP          BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_acc.bmp"
+
+LZDSH_IDI_MINIMIZE_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_min.bmp"
+LZDSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_exit.bmp"
+
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_3D
+LZDSH_IDI_SEARCH_BITMAP       BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_srch.bmp"
+LZDSH_IDI_SEARCH_LIGHT_BITMAP BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_srch_light.bmp"
+LZDSH_IDI_SEARCH_SEL_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_srch_sel.bmp"
+LZDSH_IDI_ZOOM_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_zoom.bmp"
+LZDSH_IDI_ZOOM_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_zoom_light.bmp"
+LZDSH_IDI_ZOOM_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_zoom_sel.bmp"
+LZDSH_IDI_WIDE_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_wide.bmp"
+LZDSH_IDI_WIDE_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_wide_light.bmp"
+LZDSH_IDI_WIDE_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_wide_sel.bmp"
+LZDSH_IDI_ACC_BITMAP          BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_acc.bmp"
+LZDSH_IDI_ACC_LIGHT_BITMAP    BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_acc_light.bmp"
+LZDSH_IDI_ACC_SEL_BITMAP      BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_acc_sel.bmp"
+
+LZDSH_IDI_MINIMIZE_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_min.bmp"
+LZDSH_IDI_MINIMIZE_LIGHT_BITMAP  BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mahd_min_light.bmp"
+LZDSH_IDI_MINIMIZE_SEL_BITMAP BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_min_sel.bmp"
+LZDSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_exit.bmp"
+LZDSH_IDI_EXIT_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_exit_light.bmp"
+LZDSH_IDI_EXIT_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_exit_sel.bmp"
+
+LZDSH_IDI_BACK_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_left.bmp"
+LZDSH_IDI_BACK_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_left_light.bmp"
+LZDSH_IDI_BACK_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_left_sel.bmp"
+LZDSH_IDI_FORWARD_BITMAP      BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_right.bmp"
+LZDSH_IDI_FORWARD_LIGHT_BITMAP BITMAP  DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_right_light.bmp"
+LZDSH_IDI_FORWARD_SEL_BITMAP  BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_right_sel.bmp"
+#endif
+
+#if IBSH_SKIN == IBSH_SKIN_STANDART
+LZDSH_IDI_MAIN_BITMAP         BITMAP  DISCARDABLE     "f:/kp/source/tev/lzdsh/narrow.bmp"
+LZDSH_IDI_MAIN_MASK_BITMAP    BITMAP  DISCARDABLE     "f:/kp/source/tev/lzdsh/narrow_mask.bmp"
+LZDSH_IDI_SEARCH_ROT_BITMAP   BITMAP  DISCARDABLE     "f:/kp/source/common/search_rot.bmp"
+LZDSH_IDI_SEARCH_ROT_MASK_BITMAP BITMAP DISCARDABLE   "f:/kp/source/common/search_rot_mask.bmp"
+LZDSH_IDI_HIST_BITMAP         BITMAP  DISCARDABLE     "f:/kp/source/tev/lzdsh/hist.bmp"
+LZDSH_IDI_HIST_MASK_BITMAP    BITMAP  DISCARDABLE     "f:/kp/source/tev/lzdsh/hist_mask.bmp"
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON
+LZDSH_IDI_MAIN_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_main.bmp"
+LZDSH_IDI_MAIN_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_main_light.bmp"
+LZDSH_IDI_MAIN_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_main_sel.bmp"
+LZDSH_IDI_SEARCH_ROT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_srcr.bmp"
+LZDSH_IDI_SEARCH_ROT_LIGHT_BITMAP  BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mah_srcr_light.bmp"
+LZDSH_IDI_SEARCH_ROT_SEL_BITMAP    BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mah_srcr_sel.bmp"
+LZDSH_IDI_HIST_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_hist.bmp"
+LZDSH_IDI_HIST_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_hist_light.bmp"
+LZDSH_IDI_HIST_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_hist_sel.bmp"
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_LIGHT
+LZDSH_IDI_MAIN_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_main.bmp"
+LZDSH_IDI_MAIN_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_main_sel.bmp"
+LZDSH_IDI_SEARCH_ROT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_srcr.bmp"
+LZDSH_IDI_SEARCH_ROT_SEL_BITMAP  BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mahl_srcr_sel.bmp"
+LZDSH_IDI_HIST_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_hist.bmp"
+LZDSH_IDI_HIST_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahl_hist_sel.bmp"
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_3D
+LZDSH_IDI_MAIN_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_main.bmp"
+LZDSH_IDI_MAIN_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_main_light.bmp"
+LZDSH_IDI_MAIN_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_main_sel.bmp"
+LZDSH_IDI_SEARCH_ROT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_srcr.bmp"
+LZDSH_IDI_SEARCH_ROT_LIGHT_BITMAP  BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mahd_srcr_light.bmp"
+LZDSH_IDI_SEARCH_ROT_SEL_BITMAP  BITMAP  DISCARDABLE  "f:/kp/source/tev/lzdsh/mahd_srcr_sel.bmp"
+LZDSH_IDI_HIST_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_hist.bmp"
+LZDSH_IDI_HIST_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_hist_light.bmp"
+LZDSH_IDI_HIST_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_hist_sel.bmp"
+#endif
+
+#if IBSH_SKIN == IBSH_SKIN_STANDART
+// LZDSH_IDI_BMP_BCKGRND         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/sta_bgd.bmp"
+#elif IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON
+LZDSH_IDI_BMP_BCKGRND         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mah_bgd.bmp"
+#elif (IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_LIGHT) || (IBSH_SKIN == IBSH_SKIN_LZDSH_MAHAGON_3D)
+LZDSH_IDI_BMP_BCKGRND         BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_bgd.bmp"
+LZDSH_IDI_BMP_LOGO            BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_logo.bmp"
+LZDSH_IDI_BMP_FMENU           BITMAP   DISCARDABLE    "f:/kp/source/tev/lzdsh/mahd_fmen.bmp"
+#endif
+

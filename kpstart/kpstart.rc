@@ -1,0 +1,36 @@
+// ------------------------------
+// res_com.rc
+// Kp resource script.
+//
+#include "res_com.h"
+#include "iBshr.h"
+
+KP_IDI_MAIN_ICON      ICON    DISCARDABLE     "f:/kp/source/common/start.ico"
+
+KP_IDI_START_ICON     ICON    DISCARDABLE     "f:/kp/source/common/start.ico"
+IBSH_IDI_ADD_ICON     BITMAP   DISCARDABLE    "f:/kp/source/common/start.bmp"
+
+IBSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_s.bmp"
+IBSH_IDI_EXIT_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_hover_s_1.bmp"
+IBSH_IDI_EXIT_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_press_s_3.bmp"
+
+KP_IDI_OPEN_ICON      ICON    DISCARDABLE     "f:/kp/source/common/open.ico"
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+// KP_IDI_ARKIM_ICON  ICON    DISCARDABLE     "f:/kp/source/Tev/arkim/arkim01.ico"
+// KP_IDI_STARTSEL_ICON  ICON    DISCARDABLE     "f:/kp/source/common/start.ico" // "f:/kp/source/kpstart/startsel.ico"
+
+KP_IDI_HIDE_CLOSE_BUTTON_BMP_XP  BITMAP DISCARDABLE    "f:/kp/source/kpstart/hbut_xp.bmp"
+
+// vertikaliai besisukantis slankiklis 
+// KP_IDI_SLIDER_1_BMP  BITMAP  DISCARDABLE     "f:/kp/source/kpstart/slider1.bmp"
+
+// horizontaliai slenkantis slankiklis 
+// KP_IDI_SLIDER_2_BMP  BITMAP  DISCARDABLE     "f:/kp/source/kpstart/slider2.bmp"
+// KP_IDI_SLIDER_2_BMP  BITMAP  DISCARDABLE     "f:/kp/source/kpstart/slider3.bmp"
+KP_IDI_SLIDER_2_BMP     BITMAP  DISCARDABLE     "f:/kp/source/kpstart/termometras.bmp"
+
+// KP_IDI_MUTE_BMP         BITMAP  DISCARDABLE     "f:/kp/source/kpstart/mute_bmp/mute1s.bmp"
+// KP_IDI_MUTED_BMP        BITMAP  DISCARDABLE     "f:/kp/source/kpstart/mute_bmp/muteds.bmp"
+
+KP_IDI_CHECKED_BMP         BITMAP  DISCARDABLE     "f:/kp/source/common/checked.bmp"
+KP_IDI_UNCHECKED_BMP       BITMAP  DISCARDABLE     "f:/kp/source/common/unchecked.bmp"

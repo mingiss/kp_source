@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Kplibwr_pl" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="libkplibwr_pl.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-g" />
+			<Add option="-DEnvir=15" />
+			<Add option="-DKPSTEDI_MODE=6" />
+			<Add option="-DMsgLang=98" />
+			<Add option="-DBUFFERSIZE=4096" />
+			<Add directory="F:\source\common" />
+			<Add directory="F:\source\kpt" />
+			<Add directory="F:\source\xml" />
+			<Add directory="F:\kp\source\common" />
+			<Add directory="F:\kp\source\kpt" />
+			<Add directory="F:\kp\source\kps" />
+			<Add directory="F:\kp\source\kphp11" />
+			<Add directory="F:\kp\source\kpstart" />
+			<Add directory="F:\kp\source\Tev\xml" />
+			<Add directory="F:\kp\source\Tev\tex" />
+			<Add directory="F:\kp\source\Tev\rtf" />
+			<Add directory="f:\kp\source\Tev\xml\tux_gecko\include" />
+			<Add directory="F:\kp\source\win_include" />
+			<Add directory="F:\kp\source\Tev\iBook" />
+			<Add directory="F:\kp\source\Tev\lzdsh" />
+		</Compiler>
+		<Unit filename="..\Tev\RTF\Tvrtf.cpp" />
+		<Unit filename="..\Tev\RTF\Tvrtfo.cpp" />
+		<Unit filename="..\Tev\RTF\Tvrtft.cpp" />
+		<Unit filename="..\Tev\Tvmain.cpp" />
+		<Unit filename="..\Tev\prodreg\gen.cpp" />
+		<Unit filename="..\Tev\xml\Htmt.cpp" />
+		<Unit filename="..\Tev\xml\KpGecko.CPP" />
+		<Unit filename="..\Tev\xml\Tvxmlc.cpp" />
+		<Unit filename="..\Tev\xml\Tvxmlcm.cpp" />
+		<Unit filename="..\Tev\xml\XMLB.CPP" />
+		<Unit filename="..\Tev\xml\Xml8.cpp" />
+		<Unit filename="..\Tev\xml\Xmlf.cpp" />
+		<Unit filename="..\Tev\xml\Xmlg.cpp" />
+		<Unit filename="..\Tev\xml\Xmlh.cpp" />
+		<Unit filename="..\Tev\xml\Xmli.cpp" />
+		<Unit filename="..\Tev\xml\Xmln.cpp" />
+		<Unit filename="..\Tev\xml\Xmlnr.cpp" />
+		<Unit filename="..\Tev\xml\Xmlp.cpp" />
+		<Unit filename="..\Tev\xml\Xmlt.cpp" />
+		<Unit filename="..\Tev\xml\Xmlu.cpp" />
+		<Unit filename="..\Tev\xml\tvxml.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlch.cpp" />
+		<Unit filename="..\Tev\xml\tvxmle.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlel0.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlelc.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlevc.cpp" />
+		<Unit filename="..\Tev\xml\tvxmls.cpp" />
+		<Unit filename="..\Tev\xml\xmlis.cpp" />
+		<Unit filename="..\Tev\xml\xmlnh.cpp" />
+		<Unit filename="..\Tev\xml\xmlnl.cpp" />
+		<Unit filename="..\Tev\xml\xmlo1.cpp" />
+		<Unit filename="Diskid32.cpp" />
+		<Unit filename="KPSOCK.CPP" />
+		<Unit filename="KpFileSys.cpp" />
+		<Unit filename="KpPubDlg.cpp" />
+		<Unit filename="Kpcapp.cpp" />
+		<Unit filename="Kpcons.cpp" />
+		<Unit filename="Kpctype.cpp" />
+		<Unit filename="Kpctypp.h" />
+		<Unit filename="Kperr.cpp" />
+		<Unit filename="Kperrl_0.cpp" />
+		<Unit filename="Kpsort.cpp" />
+		<Unit filename="Kpstdio.cpp" />
+		<Unit filename="Kpstdio.h" />
+		<Unit filename="Kpstdlib.cpp" />
+		<Unit filename="Kpstring.cpp" />
+		<Unit filename="Kpwindow.cpp" />
+		<Unit filename="Kpwindow.h" />
+		<Unit filename="cdecode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="cencode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="kptree.cpp" />
+		<Unit filename="winbase.h" />
+		<Unit filename="..\kphp11\Kphp1152.cpp" />
+		<Unit filename="..\kphp11\Kphp11d.cpp" />
+		<Unit filename="..\kphp11\Kphp11m.cpp" />
+		<Unit filename="..\kphp11\Kphp11mz.cpp" />
+		<Unit filename="..\kphp11\Kphp11p.cpp" />
+		<Unit filename="..\kphp11\Kphp11rc.cpp" />
+		<Unit filename="..\kphp11\Kphp11ry.cpp" />
+		<Unit filename="..\kphp11\Kphp11s.cpp" />
+		<Unit filename="..\kphp11\Kphp11t.cpp" />
+		<Unit filename="..\kphp11\Kphp11tt.cpp" />
+		<Unit filename="..\kphp11\Kphp11w.cpp" />
+		<Unit filename="..\kphp11\Kphp11y.cpp" />
+		<Unit filename="..\kphp11\Kphp11yd.cpp" />
+		<Unit filename="..\kps\Kpstap.cpp" />
+		<Unit filename="..\kps\Kpstap.h" />
+		<Unit filename="..\kps\Kpstapa.cpp" />
+		<Unit filename="..\kps\Kpstapd.cpp" />
+		<Unit filename="..\kps\Kpstapl.cpp" />
+		<Unit filename="..\kps\Kpstapr.cpp" />
+		<Unit filename="..\kps\Kpstapu.cpp" />
+		<Unit filename="..\kps\kpstaf.cpp" />
+		<Unit filename="..\kps\kpstape.cpp" />
+		<Unit filename="..\kps\kpstapg.cpp" />
+		<Unit filename="..\kps\kpstaps.cpp" />
+		<Unit filename="..\kpt\KPTHP1.CPP" />
+		<Unit filename="..\kpt\Kptt2.cpp" />
+		<Unit filename="..\kpt\Kpttuc.cpp" />
+		<Unit filename="..\kpt\Kpttucc.cpp" />
+		<Unit filename="..\kpt\Kpttucf.cpp" />
+		<Unit filename="..\kpt\Kpttul.cpp" />
+		<Unit filename="..\..\..\source\common\Envir.h" />
+		<Unit filename="..\..\..\source\common\KPFONTS.CPP" />
+		<Unit filename="..\..\..\source\common\Kpctype.h" />
+		<Unit filename="..\..\..\source\common\Kpstdlib.h" />
+		<Unit filename="..\..\..\source\common\Kpstring.h" />
+		<Unit filename="..\..\..\source\common\kpcolors.cpp" />
+		<Unit filename="..\..\..\source\common\kperrno.h" />
+		<Unit filename="..\..\..\source\xml\tvxml.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,17 @@
+// ------------------------------
+// res_com.rc
+// Kp resource script.
+//
+#include "res_com.h"
+
+KP_IDI_OPEN_ICON        ICON  DISCARDABLE     "e:/kp/source/common/open.ico"
+
+KP_IDI_NODE_BYPASS_BMP       BITMAP DISCARDABLE    "e:/kp/source/common/node_bypass.bmp"
+KP_IDI_NODE_BOTTOM_BMP       BITMAP DISCARDABLE    "e:/kp/source/common/node_bottom.bmp"
+KP_IDI_NODE_BOTTOM_LAST_BMP  BITMAP DISCARDABLE    "e:/kp/source/common/node_bottom_last.bmp"
+KP_IDI_NODE_OPEN_BMP         BITMAP DISCARDABLE    "e:/kp/source/common/node_open.bmp"
+KP_IDI_NODE_OPEN_LAST_BMP    BITMAP DISCARDABLE    "e:/kp/source/common/node_open_last.bmp"
+KP_IDI_NODE_CLOSED_BMP       BITMAP DISCARDABLE    "e:/kp/source/common/node_closed.bmp"
+KP_IDI_NODE_CLOSED_LAST_BMP  BITMAP DISCARDABLE    "e:/kp/source/common/node_closed_last.bmp"
+KP_IDI_NODE_BYPASS_EMPTY_BMP BITMAP DISCARDABLE    "e:/kp/source/common/node_bypass_empty.bmp"
+

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_project_file>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="1"/>
+	<Project>
+		<Option title="xmlrpt"/>
+		<Option makefile="Makefile"/>
+		<Option makefile_is_custom="0"/>
+		<Option compiler="0"/>
+		<Build>
+			<Target title="default">
+				<Option output="F:\kp\source\Tev\xml\xmlrpt.exe"/>
+				<Option working_dir="."/>
+				<Option object_output=".objs"/>
+				<Option deps_output=".deps"/>
+				<Option type="1"/>
+				<Option compiler="0"/>
+				<Option projectResourceIncludeDirsRelation="1"/>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-DEnvir=16"/>
+			<Add directory="F:\source\common"/>
+			<Add directory="F:\source\kpt"/>
+			<Add directory="F:\source\xml\"/>
+			<Add directory="F:\kp\source\kpt"/>
+			<Add directory="F:\kp\source\common"/>
+			<Add directory="F:\kp\source\Tev\xml\"/>
+			<Add directory="F:\kp\source\Tev\tex"/>
+			<Add directory="F:\kp\source\Tev\rtf"/>
+		</Compiler>
+		<Linker>
+			<Add library="kplibtd"/>
+			<Add library="gdi32"/>
+			<Add library="setupapi"/>
+			<Add directory="F:\kp\source\common"/>
+		</Linker>
+		<Unit filename="Xmlrpt.cpp">
+			<Option compilerVar="CPP"/>
+			<Option target="default"/>
+		</Unit>
+		<Unit filename="Xmlrpt.h">
+			<Option compilerVar=""/>
+			<Option compile="0"/>
+			<Option link="0"/>
+			<Option target="default"/>
+		</Unit>
+		<Unit filename="xmlsty0.cpp">
+			<Option compilerVar="CPP"/>
+			<Option target="default"/>
+		</Unit>
+		<Unit filename="xmlsty2.cpp">
+			<Option compilerVar="CPP"/>
+			<Option target="default"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

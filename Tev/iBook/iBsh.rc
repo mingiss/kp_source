@@ -1,0 +1,31 @@
+// ------------------------------
+// arksh.rc
+//
+#include "envir.h"
+#include "iBshn.h"
+#include "res_com.h"
+#include "tvxml.h"
+#include "KpGecko.h"
+#include "iBsh.h"
+#include "iBshl.h"
+#include "iBshr.h"
+
+// ------------------------
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+
+#if IBSH_SKIN == IBSH_SKIN_STANDART
+// ARKSH_IDI_MAIN_ICON           ICON     DISCARDABLE    "f:/kp/source/tev/arkim/ipa.ico"
+KP_IDI_MAIN_ICON             ICON     DISCARDABLE    "f:/kp/source/tev/arkim/arkim01.ico"
+#endif
+#if IBSH_SKIN == IBSH_SKIN_MIKO
+KP_IDI_MAIN_ICON             ICON     DISCARDABLE    "f:/kp/source/tev/arkim/tevt/MIKOview.ico"
+IBSH_IDI_ADD_ICON            BITMAP   DISCARDABLE    "f:/kp/source/tev/arkim/tevt/MIKOview_ico_1.bmp"
+#endif
+
+IBSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_s.bmp"
+IBSH_IDI_EXIT_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_hover_s_1.bmp"
+IBSH_IDI_EXIT_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/exit_press_s_3.bmp"
+
+IBSH_IDI_SAVE_AS_BITMAP         BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/save_as_1_sm.bmp"
+IBSH_IDI_SAVE_AS_LIGHT_BITMAP   BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/save_as_1_hover_sm.bmp"
+IBSH_IDI_SAVE_AS_SEL_BITMAP     BITMAP   DISCARDABLE    "f:/kp/source/tev/iBook/save_as_1_pressed_sm.bmp"

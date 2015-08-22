@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="XFS" />
+		<Option pch_mode="2" />
+		<Option default_target="xfs.exe" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="tux">
+				<Option output="lib\libtux.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj\" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+			</Target>
+			<Target title="xfs.dll">
+				<Option output="bin\XFS.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj\" />
+				<Option external_deps="lib\libtux.a;" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option host_application="bin\XFS.exe" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="tux" />
+					<Add library="ntdll" />
+				</Linker>
+			</Target>
+			<Target title="xfs.exe">
+				<Option output="bin\XFS.exe" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj\" />
+				<Option external_deps="lib\libtux.a;" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="kpsttrg" />
+					<Add library="tux" />
+					<Add library="ntdll" />
+					<Add library="psapi" />
+					<Add library="comctl32" />
+					<Add library="winmm" />
+					<Add library="setupapi" />
+					<Add library="wsock32" />
+				</Linker>
+			</Target>
+			<Target title="xipa.bin">
+				<Option output="arch\bin\xipa.bin" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj\" />
+				<Option external_deps="lib\libtux.a;" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="tux" />
+					<Add library="kpsttrg" />
+					<Add library="comctl32" />
+					<Add library="oleaut32" />
+					<Add library="setupapi" />
+					<Add library="uuid" />
+					<Add library="winmm" />
+					<Add library="ws2_32" />
+					<Add library="ntdll" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="all" targets="tux;xfs.dll;xfs.exe;xipa.bin;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fno-strict-aliasing" />
+			<Add option="-masm=intel" />
+			<Add option="-std=gnu++0x" />
+			<Add directory="include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="F:\kp\source\kpstart\tux_XFS\include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="psapi" />
+			<Add directory="lib" />
+		</Linker>
+		<Unit filename="include\detours.h">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\hde.h">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\hde32.h">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\XTux.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\assembler\XAssembler.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XBaseMap.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XBaseMutableTreeNode.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XByteBuffer.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XHashMap.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XLinkedList.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XLinkedTreeNode.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XMapEntry.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XPair.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XSimpleMap.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\container\XVector.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XApplication.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XDebug.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XDllApp.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XException.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XExeApp.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XNullPtr.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XObject.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XObject2.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XRefCounter.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XSharedPtr.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XString.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XTux.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\core\XWeakPtr.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XDebugger.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XHookManager.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XIce.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XIcePatch.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XPortableExecutable.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\debugger\XStack.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFS.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSContainer.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSDebugger.hh">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSDecrypter.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSDll.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSExe.hh">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSFile.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSImageSection.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSLink.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XFSNode.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNTAPI.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNative.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeFile.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeLdr.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeMemory.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeOFile.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeObject.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeSection.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XNativeUtils.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\fs\XSandboxPolicy.hh">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIComparable.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIComparator.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIInputStream.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIIterable.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIIterator.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIList.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIMap.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIMutableList.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIMutableTreeNode.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIObject.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIOutputStream.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIOutputStream2.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIRunnable.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XIString.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\interface\XITreeNode.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\io\XCOutputStream.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\io\XCOutputStream2.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\io\XDebugOutputStream2.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\io\XNativeInputStream.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\ipa\XRegistry.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\Xipa.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\XipaControl.hh">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="include\tux\ipa\XipaExe.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\XipaRegister.hh">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="include\tux\ipa\tux_core.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\tux_net.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\tux_pdf.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\tux_splash.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\tux_win.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\ipa\xipa_t.hh">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="include\tux\iterator\XIteratorAdapter.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\iterator\XLinkedListIterator.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\iterator\XNullIterator.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\iterator\XVectorIterator.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\system\XMemoryProtect.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\system\XModule.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\system\XProcess.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\system\XThread.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\template\XIntTuple.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\template\XInvocation.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\template\XTuple.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\template\XTupleElement.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\template\XWrapper.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\type\X32.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\type\XInt.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="include\tux\type\XValue.hh">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\hde32.cpp">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\assembler\XAssembler.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XBaseMap.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XBaseMutableTreeNode.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XByteBuffer.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XHashMap.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XLinkedList.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XLinkedTreeNode.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XMapEntry.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XSimpleMap.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\container\XVector.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XApplication.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XDebug.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XDllApp.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\core\XException.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XExeApp.cc">
+			<Option target="xfs.exe" />
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\core\XNullPtr.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XObject.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XObject2.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\core\XString.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\debugger\XDebugger.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\debugger\XHookManager.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\debugger\XIcePatch.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\debugger\XPortableExecutable.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\debugger\XStack.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFS.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSContainer.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSDebugger.cc">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSDecrypter.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSDll.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSExe.cc">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSFile.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSImageSection.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSLink.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XFSNode.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNative.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeFile.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeLdr.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeMemory.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeObject.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeSection.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XNativeUtils.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\fs\XSandboxPolicy.cc">
+			<Option target="xfs.exe" />
+		</Unit>
+		<Unit filename="src\tux\interface\XIString.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\io\XCOutputStream.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\io\XCOutputStream2.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\io\XDebugOutputStream2.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\io\XNativeInputStream.cc">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="src\tux\ipa\XRegistry.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\XipaControl.cc">
+			<Option target="xfs.dll" />
+		</Unit>
+		<Unit filename="src\tux\ipa\XipaExe.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\XipaRegister.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\XipaResource.rc">
+			<Option compilerVar="WINDRES" />
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\tux_net.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\tux_pdf.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\tux_splash.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\tux_win.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\ipa\xipa_t.cc">
+			<Option target="xipa.bin" />
+		</Unit>
+		<Unit filename="src\tux\iterator\XIteratorAdapter.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\iterator\XLinkedListIterator.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\iterator\XNullIterator.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\iterator\XVectorIterator.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\system\XMemoryProtect.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\system\XModule.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\system\XProcess.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\system\XThread.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\type\XInt.cc">
+			<Option target="tux" />
+		</Unit>
+		<Unit filename="src\tux\type\XValue.cc">
+			<Option target="tux" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

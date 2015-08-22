@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="kpstart/kpstreg.cbp" />
+		<Project filename="kpstart/kpstun.cbp" />
+		<Project filename="kpstart/kpsttrg32.cbp" />
+		<Project filename="kpstart/tux_XFS/XFS.cbp" />
+		<Project filename="kpstart/tux/tux_ipa/XIPA.cbp" active="1" />
+	</Workspace>
+</CodeBlocks_workspace_file>

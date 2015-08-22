@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Default workspace">
+		<Project filename="kplibwr.cbp" />
+		<Project filename="kplibwd.cbp" />
+		<Project filename="kplibtr.cbp" />
+		<Project filename="kplibtd.cbp" />
+		<Project filename="../kpstart/kpstart.cbp" />
+		<Project filename="../kpstart/kpstartd.cbp" />
+		<Project filename="../kpstart/kpstartx.cbp" />
+		<Project filename="../kpstart/kpstartxd.cbp" />
+		<Project filename="../kpstart/kpstarti.cbp" />
+		<Project filename="../kpstart/kpstreg.cbp" />
+		<Project filename="../kpstart/kpsttrg.cbp" />
+		<Project filename="../kpstart/kpsttrgd.cbp" />
+		<Project filename="../kpstart/kpsttrgl.cbp" />
+		<Project filename="../kpstart/kpstplx.cbp" />
+		<Project filename="../kpstart/kpstplxd.cbp" />
+		<Project filename="../kpstart/kpstplxl.cbp" />
+		<Project filename="../kpstart/kpstw.cbp" />
+		<Project filename="../Tev/xml/xmlrpt.cbp" />
+		<Project filename="../Tev/prodreg/geniss.cbp" />
+		<Project filename="kpmkcdat.cbp" />
+		<Project filename="../kpstart/kpstart_flash/chkvol.cbp" />
+		<Project filename="../Tev/rlz/rlzt2x.cbp" />
+		<Project filename="../kpstart/kpstart_flash/atmintukas.cbp" />
+		<Project filename="../Tev/xml/MSHTML/MSHTMLTest.cbp" />
+		<Project filename="../Tev/lzdsh/XTest.cbp" />
+		<Project filename="../Tev/lzdsh/lzdshgcs.cbp" />
+		<Project filename="../Tev/mcm/lzdshc.cbp" />
+		<Project filename="../Tev/lzdsh/lzdshd.cbp" />
+		<Project filename="../Tev/lzdsh/lzdshpf.cbp" active="1" />
+		<Project filename="../Tev/lzdsh/lzdshpd.cbp" />
+		<Project filename="../Tev/lzdsh/lzdshp.cbp" />
+		<Project filename="../Tev/xml/tux_gecko/tux_test.cbp" />
+		<Project filename="../kpstart/tux/tux_ipa/XIPA.cbp" />
+		<Project filename="../Tev/iBook/iBshd.cbp" />
+		<Project filename="../kpstart/tux_XFS/XFS.cbp" />
+		<Project filename="../Tev/arkim/tevt/arkshd.cbp" />
+		<Project filename="../Tev/arkim/tevt/arksh.cbp" />
+		<Project filename="../kpn/hello.cbp" />
+		<Project filename="../../src/Namai/pecius/pecius.cbp" />
+		<Project filename="../kpstart/kpstun.cbp" />
+		<Project filename="../Tev/xml/tux_gecko/tux_gecko.cbp" />
+		<Project filename="../kpstart/cert/Launcher/src/Launcher.cbp" />
+		<Project filename="../kpstart/kpstisvr.cbp" />
+		<Project filename="kplibwr32.cbp" />
+		<Project filename="../Tev/arkim/tevt/arksh32.cbp" />
+		<Project filename="../kpstart/kpsttrg32.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

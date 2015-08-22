@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="kphp11" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="F:\kp\source\kphp11\Release\kphp11" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option additional_output="F:\kp\source\common\libkplibwr.a;" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+					<Add option="-DEnvir=15" />
+					<Add option="-DMsgLang=1" />
+					<Add option="-DExternalKphp11" />
+					<Add option="-DKPSTEDI_MODE=6" />
+					<Add option="-DBUFFERSIZE=4096" />
+					<Add directory="F:\source\common\" />
+					<Add directory="F:\source\kpt\" />
+					<Add directory="F:\source\xml\" />
+					<Add directory="F:\kp\source\kpt\" />
+					<Add directory="F:\kp\source\Tev\iBook\" />
+					<Add directory="F:\kp\source\Tev\lzdsh\" />
+					<Add directory="F:\kp\source\Tev\xml\tux_gecko\include\" />
+					<Add directory="F:\kp\source\Tev\xml\" />
+					<Add directory="F:\kp\source\kphp11\" />
+					<Add directory="F:\kp\source\Tev\tex\" />
+					<Add directory="F:\kp\source\Tev\rtf\" />
+					<Add directory="F:\kp\source\kps\" />
+					<Add directory="F:\kp\source\common\" />
+					<Add directory="F:\kp\source\kpstart\" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,-Map,kphp11_mingw.map" />
+					<Add library="kplibwr" />
+					<Add library="gdi32" />
+					<Add library="user32" />
+					<Add library="kernel32" />
+					<Add library="comctl32" />
+					<Add library="winmm" />
+					<Add library="advapi32" />
+					<Add library="setupapi" />
+					<Add library="wsock32" />
+					<Add library="uuid" />
+					<Add library="ole32" />
+					<Add library="Iphlpapi" />
+					<Add library="ntdll" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="shell32" />
+					<Add library="oleaut32" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add directory="F:\kp\source\common\" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="F:\kp\source\kphp11\Debug\kphp11" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+					<Add directory="d:\kp\source\common" />
+					<Add directory="d:\kp\source\kphp11" />
+					<Add directory="d:\kp\source\kpt" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="..\COMMON\ENVDEF.H" />
+		<Unit filename="..\COMMON\Envsupp.h" />
+		<Unit filename="..\COMMON\KPERR.H" />
+		<Unit filename="..\COMMON\KPSORT.H" />
+		<Unit filename="..\COMMON\KPSTDIO.H" />
+		<Unit filename="..\COMMON\Kpctype.h" />
+		<Unit filename="..\COMMON\Kpstdlib.h" />
+		<Unit filename="..\COMMON\Kpstring.h" />
+		<Unit filename="..\COMMON\envir.h" />
+		<Unit filename="..\Common\StdAfx.h" />
+		<Unit filename="..\Common\kpcolors.h" />
+		<Unit filename="..\Common\kpwindow.h" />
+		<Unit filename="..\Tev\Tvmain.h" />
+		<Unit filename="..\Tev\xml\KpGecko0.CPP" />
+		<Unit filename="..\Tev\xml\xmlsty0.cpp" />
+		<Unit filename="..\Tev\xml\xmlsty2.cpp" />
+		<Unit filename="..\Tev\xml\xmlt0.cpp" />
+		<Unit filename="..\common\kpcurdat.cpp" />
+		<Unit filename="Kphp11.cpp" />
+		<Unit filename="Kphp1152.h" />
+		<Unit filename="Kphp11d.h" />
+		<Unit filename="Kphp11i.h" />
+		<Unit filename="Kphp11m.h" />
+		<Unit filename="Kphp11mz.h" />
+		<Unit filename="Kphp11p.h" />
+		<Unit filename="Kphp11ry.h" />
+		<Unit filename="Kphp11tt.h" />
+		<Unit filename="Kphp11w.h" />
+		<Unit filename="Kphp11y.cpp" />
+		<Unit filename="Kphp11y.h" />
+		<Unit filename="Kphp11yd.cpp" />
+		<Unit filename="Resource.h" />
+		<Unit filename="kphp11rc.h" />
+		<Unit filename="kphp11s.h" />
+		<Unit filename="kphp11t.h" />
+		<Unit filename="..\kps\kpst0_ini.cpp" />
+		<Unit filename="..\kps\kpstapg0.cpp" />
+		<Unit filename="..\kpt\Kptt.h" />
+		<Unit filename="..\..\..\source\xml\Tvxmltt.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

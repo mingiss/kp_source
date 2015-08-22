@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="xml2c" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="xml2c" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="kpstreg.cbp kpstreg.c kpstreg.cc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="F:\kp\source\cbp2mak\tinyxml" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="xml2c" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="F:\kp\source\cbp2mak\tinyxml" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="tinyxml\tinystr.cpp" />
+		<Unit filename="tinyxml\tinyxml.cpp" />
+		<Unit filename="tinyxml\tinyxmlerror.cpp" />
+		<Unit filename="tinyxml\tinyxmlparser.cpp" />
+		<Unit filename="txml.cpp" />
+		<Unit filename="xml2c.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

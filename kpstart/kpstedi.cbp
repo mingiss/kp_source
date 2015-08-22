@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="kpstedi" />
+		<Option makefile="makefile" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="F:\kp\source\kpstart\Release\kpstedi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-O2" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="F:\kp\source\kpstart\Debug\kpstedi" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+					<Add directory="f:\kp\source\common" />
+					<Add directory="f:\kp\source\kps" />
+					<Add directory="f:\kp\source\kphp11" />
+					<Add directory="f:\kp\source\kpt" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="winmm" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="..\Common\Kpcons.cpp" />
+		<Unit filename="..\Common\Kpctype.cpp" />
+		<Unit filename="..\Common\Kperr.cpp" />
+		<Unit filename="..\kphp11\Kphp1152.cpp" />
+		<Unit filename="..\kphp11\Kphp11d.cpp" />
+		<Unit filename="..\kphp11\Kphp11m.cpp" />
+		<Unit filename="..\kphp11\Kphp11mz.cpp" />
+		<Unit filename="..\kphp11\Kphp11p.cpp" />
+		<Unit filename="..\kphp11\Kphp11rc.cpp" />
+		<Unit filename="..\kphp11\Kphp11ry.cpp" />
+		<Unit filename="..\kphp11\Kphp11s.cpp" />
+		<Unit filename="..\kphp11\kphp11t.cpp" />
+		<Unit filename="..\kphp11\Kphp11tt.cpp" />
+		<Unit filename="..\kphp11\Kphp11w.cpp" />
+		<Unit filename="..\kphp11\Kphp11y.cpp" />
+		<Unit filename="..\Common\Kpsort.cpp" />
+		<Unit filename="..\kps\kpstap.cpp" />
+		<Unit filename="..\Common\Kpstdio.cpp" />
+		<Unit filename="..\Common\Kpstdlib.cpp" />
+		<Unit filename="kpstedi.cpp" />
+		<Unit filename="..\Common\Kpstring.cpp" />
+		<Unit filename="..\kpt\Kptt2.cpp" />
+		<Unit filename="..\kpt\Kpttul.cpp" />
+		<Unit filename="..\Common\kpwindow.cpp" />
+		<Unit filename="..\Tev\Tvmain.cpp" />
+		<Unit filename="..\COMMON\ENVDEF.H" />
+		<Unit filename="..\COMMON\envir.h" />
+		<Unit filename="..\COMMON\Envsupp.h" />
+		<Unit filename="..\Common\kpcolors.h" />
+		<Unit filename="..\COMMON\Kpctype.h" />
+		<Unit filename="..\COMMON\KPERR.H" />
+		<Unit filename="..\kphp11\Kphp1152.h" />
+		<Unit filename="..\kphp11\Kphp11d.h" />
+		<Unit filename="..\kphp11\Kphp11i.h" />
+		<Unit filename="..\kphp11\Kphp11m.h" />
+		<Unit filename="..\kphp11\Kphp11mz.h" />
+		<Unit filename="..\kphp11\Kphp11p.h" />
+		<Unit filename="..\kphp11\kphp11rc.h" />
+		<Unit filename="..\kphp11\Kphp11ry.h" />
+		<Unit filename="..\kphp11\kphp11s.h" />
+		<Unit filename="..\kphp11\kphp11t.h" />
+		<Unit filename="..\kphp11\Kphp11tt.h" />
+		<Unit filename="..\kphp11\Kphp11w.h" />
+		<Unit filename="..\kphp11\Kphp11y.h" />
+		<Unit filename="..\COMMON\KPSORT.H" />
+		<Unit filename="..\kps\kpstap.h" />
+		<Unit filename="..\kps\kpstaps.h" />
+		<Unit filename="..\COMMON\KPSTDIO.H" />
+		<Unit filename="..\COMMON\Kpstdlib.h" />
+		<Unit filename="kpstedi.h" />
+		<Unit filename="..\COMMON\Kpstring.h" />
+		<Unit filename="..\kpt\Kptt.h" />
+		<Unit filename="..\Common\kpwindow.h" />
+		<Unit filename="..\kps\resource.h" />
+		<Unit filename="..\Common\StdAfx.h" />
+		<Unit filename="..\Tev\Tvmain.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

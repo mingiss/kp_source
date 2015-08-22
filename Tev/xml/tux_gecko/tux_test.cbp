@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="tux_test" />
+		<Option pch_mode="2" />
+		<Option compiler="xmingw32" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\tux_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="xmingw32" />
+				<Compiler>
+					<Add option="-mno-cygwin" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-mno-cygwin" />
+					<Add library="tux_gecko" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\tux_test" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin\" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-Wall" />
+					<Add option="-mno-cygwin" />
+					<Add directory="include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-mno-cygwin" />
+					<Add library="tux_gecko" />
+					<Add directory="lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="res\XTest.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src\XTest.cc" />
+		<Extensions>
+			<code_completion />
+			<debugger>
+				<search_path add="C:\mozilla" />
+				<search_path add="C:\mozilla\modules\libpr0n\src" />
+				<search_path add="C:\mozilla\modules\libpr0n" />
+				<search_path add="C:\mozilla\modules" />
+			</debugger>
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

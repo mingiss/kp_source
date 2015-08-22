@@ -1,0 +1,4 @@
+call dump_setup_flash_upd_ind_single_0.bat MT9_SVK_atnaujinimas 1 0 30000000
+call dump_setup_flash_upd_ind_single_0.bat MT9_SVK_atnaujinimas 2 30000000 30000000
+call dump_setup_flash_upd_ind_single_0.bat MT9_SVK_atnaujinimas 3 60000000 30000000
+call dump_setup_flash_upd_ind_single_e.bat MT9_SVK_atnaujinimas 4 90000000

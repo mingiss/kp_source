@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="lzdshp32" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="F:\kp\source\Tev\lzdsh\lzdshp.exe" prefix_auto="0" extension_auto="0" />
+				<Option external_deps="F:\kp\source\common\libkplibwr.a;" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="0" />
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-DEnvir=15" />
+			<Add option="-DMsgLang=1" />
+			<Add option="-DKPSTEDI_MODE=6" />
+			<Add directory="F:\source\common" />
+			<Add directory="F:\source\kpt" />
+			<Add directory="F:\source\xml" />
+			<Add directory="F:\kp\source\common" />
+			<Add directory="F:\kp\source\kpt" />
+			<Add directory="F:\kp\source\kps" />
+			<Add directory="F:\kp\source\kphp11" />
+			<Add directory="F:\kp\source\Tev\xml" />
+			<Add directory="F:\kp\source\Tev\rtf" />
+			<Add directory="F:\kp\source\Tev\tex" />
+			<Add directory="F:\kp\source\Tev\xml\MSHTML" />
+			<Add directory="F:\kp\source\Tev\lzdsh\" />
+			<Add directory="F:\kp\source\Tev\xml\tux_gecko\include" />
+			<Add directory="F:\kp\source\Win_SDK\atl" />
+			<Add directory="F:\kp\source\Win_SDK\crt" />
+			<Add directory="F:\kp\source\Tev\iBook" />
+			<Add directory="F:\kp\source\kpstart" />
+			<Add directory="F:\kp\source\libseh" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="F:\source\common" />
+			<Add directory="F:\kp\source\common" />
+			<Add directory="F:\kp\source\Tev\lzdsh\" />
+			<Add directory="F:\source\xml\" />
+			<Add directory="F:\kp\source\Tev\iBook" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-Wl,-Map,lzdshp_mingw.map" />
+			<Add library="gdi32" />
+			<Add library="user32" />
+			<Add library="kernel32" />
+			<Add library="kplibwr" />
+			<Add library="comctl32" />
+			<Add library="winmm" />
+			<Add library="setupapi" />
+			<Add library="wsock32" />
+			<Add library="uuid" />
+			<Add library="oleaut32" />
+			<Add library="ole32" />
+			<Add library="tux_gecko" />
+			<Add library="ntdll" />
+			<Add library="seh" />
+			<Add directory="F:\kp\source\common" />
+			<Add directory="F:\kp\source\Tev\xml\tux_gecko\lib" />
+			<Add directory="F:\kp\source\libseh\build" />
+		</Linker>
+		<Unit filename="..\ldz\Ldelt.cpp" />
+		<Unit filename="..\ldz\ldzth.cpp" />
+		<Unit filename="lzdsh.cpp" />
+		<Unit filename="lzdsh.h" />
+		<Unit filename="lzdsh.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="lzdshh.cpp" />
+		<Unit filename="lzdshl.cpp" />
+		<Unit filename="lzdshl.h" />
+		<Unit filename="lzdshn.h" />
+		<Unit filename="lzdsho.cpp" />
+		<Unit filename="lzdsho.h" />
+		<Unit filename="lzdshp_cd_ini.cpp" />
+		<Unit filename="lzdshr.h" />
+		<Unit filename="lzdsht.h" />
+		<Unit filename="lzdshv.cpp" />
+		<Unit filename="..\xml\tvxmlelc0.cpp" />
+		<Unit filename="..\xml\tvxmlevc0.cpp" />
+		<Unit filename="..\xml\xmltg.cpp" />
+		<Unit filename="..\..\common\Kpwindow.h" />
+		<Unit filename="..\..\common\kpcurdat.cpp" />
+		<Unit filename="..\..\kps\kpstapg0.cpp" />
+		<Unit filename="..\..\..\..\source\common\Envir.h" />
+		<Unit filename="..\..\..\..\source\common\Kperr.h" />
+		<Unit filename="..\..\..\..\source\lzdsh\LZDSHSTY.CPP" />
+		<Unit filename="..\..\..\..\source\lzdsh\LZDSHT.CPP" />
+		<Unit filename="..\..\..\..\source\xml\Tvxmltt.cpp" />
+		<Unit filename="..\..\..\..\source\xml\Xmlt.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

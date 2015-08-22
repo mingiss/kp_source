@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1439411062 source:f:\kp\source\kpstart\kpsttun.cpp
+	<iostream>
+	"windows.h"
+	"kpsttrg.h"
+
+1439016411 f:\kp\source\kpstart\kpsttrg.h
+
+1345534306 source:f:\kp\source\kpstart\kpstart.rc
+	"res_com.h"
+	"iBshr.h"
+

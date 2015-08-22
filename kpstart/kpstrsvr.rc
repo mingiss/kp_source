@@ -1,0 +1,8 @@
+// ------------------------------
+// Kpstrsvr resource script.
+//
+#include "res_com.h"
+
+KP_IDI_START_ICON     ICON    DISCARDABLE     "f:/kp/source/common/start.ico"
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+

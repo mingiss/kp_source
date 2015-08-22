@@ -1,0 +1,1 @@
+kpwinver.exe >> kpwinver.lst

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cert_ksba" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="ksba">
+				<Option output="libksba" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-DBUILD_GENTOOLS_undefined" />
+					<Add directory="libksba-1.3.0\src" />
+					<Add directory="libksba-1.3.0" />
+					<Add directory="libgpg-error-1.10\src" />
+				</Compiler>
+			</Target>
+			<Target title="cert_ksba">
+				<Option output="cert_ksba" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option external_deps="libksba.a;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="ksba;cert_ksba;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="cert_ksba.cpp">
+			<Option target="cert_ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\asn1-func.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\asn1-func2.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\asn1-parse.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\asn1-tables.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\ber-decoder.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\ber-dump.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\ber-help.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\cert.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\certreq.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\cms-parser.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\cms.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\crl.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\der-encoder.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\dn.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\gen-help.c">
+			<Option compilerVar="CC" />
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\keyinfo.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\name.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\ocsp.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\oid.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\reader.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\time.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\util.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\version.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\visibility.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Unit filename="libksba-1.3.0\src\writer.c">
+			<Option compilerVar="CC" />
+			<Option target="ksba" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

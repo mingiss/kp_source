@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE CodeBlocks_project_file>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="1"/>
+	<Project>
+		<Option title="Static library"/>
+		<Option makefile="Makefile"/>
+		<Option makefile_is_custom="0"/>
+		<Option compiler="0"/>
+		<Build>
+			<Target title="default">
+				<Option output="F:\kp\source\Tev\xml\MSHTML\libMSHTML.a"/>
+				<Option working_dir=""/>
+				<Option object_output=".objs"/>
+				<Option deps_output=".deps"/>
+				<Option type="2"/>
+				<Option compiler="0"/>
+				<Option projectResourceIncludeDirsRelation="2"/>
+			</Target>
+		</Build>
+		<Unit filename="sample.c">
+			<Option compilerVar="CC"/>
+			<Option target="default"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

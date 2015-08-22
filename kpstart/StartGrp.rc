@@ -1,0 +1,29 @@
+// ------------------------------
+// StartGrp.rc
+// Kp resource script.
+//
+#include "res_com.h"
+#include "iBshr.h"
+
+KP_IDI_MAIN_ICON     ICON    DISCARDABLE     "f:/kp/source/kpstart/StartGrp_img/Lentyna.ico"
+IBSH_IDI_ADD_ICON    BITMAP   DISCARDABLE    "f:/kp/source/kpstart/StartGrp_img/Lentyna20.bmp" // "f:/kp/source/kpstart/Lentyna_ico.bmp"
+
+KP_IDI_BMP_BCKGRND   BITMAP   DISCARDABLE    "f:/kp/source/kpstart/StartGrp_img/fonas_0.bmp"
+
+IBSH_IDI_EXIT_BITMAP         BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/exit.bmp" // "f:/kp/source/tev/iBook/exit_s.bmp"
+IBSH_IDI_EXIT_LIGHT_BITMAP   BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/exit_hover.bmp" // "f:/kp/source/tev/iBook/exit_hover_s_1.bmp"
+IBSH_IDI_EXIT_SEL_BITMAP     BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/exit_sel.bmp" // "f:/kp/source/tev/iBook/exit_press_s_3.bmp"
+
+IBSH_IDI_MINIMIZE_BITMAP         BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/min.bmp"
+IBSH_IDI_MINIMIZE_LIGHT_BITMAP   BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/min_hover.bmp"
+IBSH_IDI_MINIMIZE_SEL_BITMAP     BITMAP   DISCARDABLE    "F:/kp/source/kpstart/StartGrp_img/min_sel.bmp"
+
+
+KP_IDI_OPEN_ICON      ICON    DISCARDABLE     "f:/kp/source/common/open.ico"
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
+// KP_IDI_STARTSEL_ICON  ICON    DISCARDABLE     "f:/kp/source/kpstart/StartGrp_img/Lentyna.ico"
+
+KP_IDI_SLIDER_2_BMP     BITMAP  DISCARDABLE     "f:/kp/source/kpstart/termometras.bmp"
+
+KP_IDI_CHECKED_BMP         BITMAP  DISCARDABLE     "f:/kp/source/common/checked.bmp"
+KP_IDI_UNCHECKED_BMP       BITMAP  DISCARDABLE     "f:/kp/source/common/unchecked.bmp"

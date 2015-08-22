@@ -1,0 +1,1 @@
+call dump_setup_flash_upd_ind_single.bat 1 MT10_SVK_atnaujinimas

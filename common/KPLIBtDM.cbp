@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="KPLIBtDM" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="F:\kp\source\common\Release\libKPLIBtDM" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Release" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-O2" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_AFXDLL" />
+					<Add option="-D_MBCS" />
+				</Compiler>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="F:\kp\source\common\Debug\libKPLIBtDM" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="Debug" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_AFXDLL" />
+					<Add option="-D_MBCS" />
+					<Add option="-DEnvir=18" />
+					<Add option="-DDebug" />
+					<Add directory="f:\source\common" />
+					<Add directory="f:\source\kpt" />
+					<Add directory="f:\source\xml" />
+					<Add directory="f:\kp\source\common" />
+					<Add directory="f:\kp\source\kps" />
+					<Add directory="f:\kp\source\kpt" />
+					<Add directory="f:\kp\source\kpstart" />
+					<Add directory="f:\kp\source\kphp11" />
+					<Add directory="f:\kp\source\tev" />
+					<Add directory="f:\kp\source\tev\xml" />
+					<Add directory="f:\kp\source\tev\rtf" />
+					<Add directory="f:\kp\source\tev\tex" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Unit filename="..\Tev\xml\Htmt.cpp" />
+		<Unit filename="..\..\..\source\common\kpcolors.cpp" />
+		<Unit filename="Kpctype.cpp" />
+		<Unit filename="Kperr.cpp" />
+		<Unit filename="..\..\..\source\common\KPFONTS.CPP" />
+		<Unit filename="kpsock.cpp" />
+		<Unit filename="Kpsort.cpp" />
+		<Unit filename="Kpstdio.cpp" />
+		<Unit filename="Kpstdlib.cpp" />
+		<Unit filename="Kpstring.cpp" />
+		<Unit filename="kptree.cpp" />
+		<Unit filename="..\kpt\Kptt2.cpp" />
+		<Unit filename="..\kpt\Kpttuc.cpp" />
+		<Unit filename="..\kpt\Kpttucc.cpp" />
+		<Unit filename="..\kpt\kpttucf.cpp" />
+		<Unit filename="..\kpt\Kpttul.cpp" />
+		<Unit filename="Kpwindow.cpp" />
+		<Unit filename="..\Tev\Tvmain.cpp" />
+		<Unit filename="..\Tev\Rtf\Tvrtf.cpp" />
+		<Unit filename="..\Tev\Rtf\Tvrtfi.cpp" />
+		<Unit filename="..\Tev\RTF\Tvrtfo.cpp" />
+		<Unit filename="..\Tev\Rtf\Tvrtft.cpp" />
+		<Unit filename="..\Tev\tex\tvtex.cpp" />
+		<Unit filename="..\Tev\tex\tvtexc.cpp" />
+		<Unit filename="..\Tev\tex\Tvtext.cpp" />
+		<Unit filename="..\Tev\xml\tvxml.cpp" />
+		<Unit filename="..\Tev\xml\Tvxmlc.cpp" />
+		<Unit filename="..\Tev\xml\Tvxmlce.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlch.cpp" />
+		<Unit filename="..\Tev\xml\Tvxmlcm.cpp" />
+		<Unit filename="..\Tev\xml\tvxmle.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlel0.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlelc.cpp" />
+		<Unit filename="..\Tev\xml\tvxmlevc.cpp" />
+		<Unit filename="..\Tev\xml\Tvxmlrm.cpp" />
+		<Unit filename="..\Tev\xml\tvxmls.cpp" />
+		<Unit filename="..\..\..\source\xml\Tvxmltt.cpp" />
+		<Unit filename="..\Tev\xml\Xml8.cpp" />
+		<Unit filename="..\Tev\xml\Xmlb.cpp" />
+		<Unit filename="..\Tev\xml\Xmlf.cpp" />
+		<Unit filename="..\Tev\xml\Xmlh.cpp" />
+		<Unit filename="..\Tev\xml\Xmli.cpp" />
+		<Unit filename="..\Tev\xml\xmlis.cpp" />
+		<Unit filename="..\Tev\xml\Xmln.cpp" />
+		<Unit filename="..\Tev\xml\Xmlnr.cpp" />
+		<Unit filename="..\Tev\xml\xmlnx.cpp" />
+		<Unit filename="..\Tev\xml\xmlo1.cpp" />
+		<Unit filename="..\Tev\xml\xmlo2.cpp" />
+		<Unit filename="..\Tev\xml\xmloi2.CPP" />
+		<Unit filename="..\Tev\xml\Xmlp.cpp" />
+		<Unit filename="..\Tev\xml\xmlsty.cpp" />
+		<Unit filename="..\Tev\xml\Xmlt.cpp" />
+		<Unit filename="..\Tev\xml\Xmlu.cpp" />
+		<Unit filename="D:\Wrk\Microsoft Visual Studio\VC98\Include\BASETSD.H" />
+		<Unit filename="..\..\..\source\common\Envir.h" />
+		<Unit filename="..\Tev\xml\HTMT.H" />
+		<Unit filename="kpcapp.h" />
+		<Unit filename="..\..\..\source\common\KPCOLORS.H" />
+		<Unit filename="..\..\..\source\common\Kpctype.h" />
+		<Unit filename="Kpctypp.h" />
+		<Unit filename="..\..\..\source\common\Kperr.h" />
+		<Unit filename="..\..\..\source\common\KPFONTS.H" />
+		<Unit filename="..\kphp11\Kphp11m.h" />
+		<Unit filename="..\kphp11\Kphp11y.h" />
+		<Unit filename="kpmsg.h" />
+		<Unit filename="kpsock.h" />
+		<Unit filename="KPSORT.H" />
+		<Unit filename="..\kps\kpstap.h" />
+		<Unit filename="KPSTDIO.H" />
+		<Unit filename="..\..\..\source\common\Kpstdlib.h" />
+		<Unit filename="..\..\..\source\common\Kpstring.h" />
+		<Unit filename="..\..\..\source\common\kptree.h" />
+		<Unit filename="..\..\..\source\kpt\Kptt.h" />
+		<Unit filename="..\kpt\kpttucf.h" />
+		<Unit filename="kpwindow.h" />
+		<Unit filename="res_com.h" />
+		<Unit filename="StdAfx.h" />
+		<Unit filename="..\..\..\source\common\Tvmain.h" />
+		<Unit filename="..\Tev\Rtf\Tvrtf.h" />
+		<Unit filename="..\Tev\RTF\Tvrtfi.h" />
+		<Unit filename="..\Tev\Rtf\Tvrtfo.h" />
+		<Unit filename="..\Tev\tex\tvtex.h" />
+		<Unit filename="..\..\..\source\xml\tvxml.h" />
+		<Unit filename="..\Tev\xml\tvxmle.h" />
+		<Unit filename="..\Tev\xml\tvxmlrm.h" />
+		<Unit filename="..\Tev\xml\TVXMLS.H" />
+		<Unit filename="..\Tev\xml\XML8.H" />
+		<Unit filename="..\Tev\xml\XMLB.H" />
+		<Unit filename="..\..\..\source\xml\Xmlf.h" />
+		<Unit filename="..\..\..\source\xml\XMLH.H" />
+		<Unit filename="..\Tev\xml\XMLI.H" />
+		<Unit filename="..\Tev\xml\xmlis.h" />
+		<Unit filename="..\Tev\xml\Xmln.h" />
+		<Unit filename="..\..\..\source\xml\xmlo1.h" />
+		<Unit filename="..\Tev\xml\xmlo2.h" />
+		<Unit filename="..\Tev\xml\xmloi2.H" />
+		<Unit filename="..\..\..\source\xml\Xmlp.h" />
+		<Unit filename="..\..\..\source\xml\XMLSTY.H" />
+		<Unit filename="..\..\..\source\xml\Xmlt.h" />
+		<Unit filename="..\Tev\xml\Xmlu.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

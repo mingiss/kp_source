@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Default workspace">
+		<Project filename="../common/kpmkcdat.cbp" />
+		<Project filename="../common/delreg.cbp" />
+		<Project filename="../common/kplibwr.cbp" />
+		<Project filename="../common/kplibwr32.cbp" />
+		<Project filename="../common/kplibwr_en.cbp" />
+		<Project filename="../common/kplibwr_pl.cbp" />
+		<Project filename="../common/kplibwr_ru.cbp" />
+		<Project filename="../common/kplibwd.cbp" />
+		<Project filename="../common/kplibtd.cbp" />
+		<Project filename="../kpstart/kpstart_flash/chkvol.cbp" />
+		<Project filename="../kpstart/kpstart_flash/atmintukas.cbp" />
+		<Project filename="../kpstart/kpstart_flash/RegAtm.cbp" />
+		<Project filename="../kpstart/kpstart.cbp" />
+		<Project filename="../kpstart/kpstart_pl.cbp" />
+		<Project filename="../kpstart/kpstartd.cbp" />
+		<Project filename="../kpstart/kpstartx.cbp" />
+		<Project filename="../kpstart/kpstartxd.cbp" />
+		<Project filename="../kpstart/kpstarti.cbp" />
+		<Project filename="../kpstart/kpstisvr.cbp" />
+		<Project filename="../kpstart/kpstisvrTDM.cbp" />
+		<Project filename="../kpstart/kpstreg.cbp" />
+		<Project filename="../kpstart/kpstun.cbp" />
+		<Project filename="../kpstart/kpsttrg.cbp" active="1" />
+		<Project filename="../kpstart/kpsttrg32.cbp" />
+		<Project filename="../kpstart/kpsttrg_creg.cbp" />
+		<Project filename="../kpstart/kpsttrgTDM.cbp" />
+		<Project filename="../kpstart/kpsttrg_en.cbp" />
+		<Project filename="../kpstart/kpsttrgd.cbp" />
+		<Project filename="../kpstart/kpsttrgl.cbp" />
+		<Project filename="../kpstart/kpstpl.cbp">
+			<Depends filename="../kpstart/kpsttrg_en.cbp" />
+		</Project>
+		<Project filename="../kpstart/kpstplx.cbp" />
+		<Project filename="../kpstart/kpstplxd.cbp" />
+		<Project filename="../kpstart/kpstplxl.cbp" />
+		<Project filename="../kpstart/kpstrpd_fplayer.cbp" />
+		<Project filename="../kpstart/kpstw.cbp" />
+		<Project filename="../kpstart/kpstset_pl.cbp" />
+		<Project filename="../kphp11/kphp11.cbp" />
+		<Project filename="../kpstart/tux/tux_ipa/XIPA.cbp" />
+		<Project filename="../kpstart/tux/tux_ipa/XIPA_TDM.cbp" />
+		<Project filename="../kpstart/tux_XFS/XFS.cbp" />
+		<Project filename="../kpstart/cert/cert_ksba/cert_ksba.cbp" />
+		<Project filename="../kpstart/cert/Launcher/src/Launcher.cbp" />
+		<Project filename="../kpstart/StartGrp.cbp" />
+		<Project filename="../kpstart/StartGrp_ru.cbp" />
+		<Project filename="../kpstart/StartGrpD.cbp" />
+		<Project filename="../kpstart/StartGrpDD.cbp" />
+		<Project filename="../kpstart/StartDemo.cbp" />
+		<Project filename="../kpstart/ListLic.cbp" />
+		<Project filename="prodreg/geniss.cbp" />
+		<Project filename="lzdsh/lzdshp.cbp" />
+		<Project filename="lzdsh/lzdshp32.cbp" />
+		<Project filename="lzdsh/lzdshpf.cbp" />
+		<Project filename="lzdsh/lzdshpd.cbp" />
+		<Project filename="lzdsh/lzdshd.cbp" />
+		<Project filename="lzdsh/lzdshgcs.cbp" />
+		<Project filename="lzdsh/XTest.cbp" />
+		<Project filename="mcm/lzdshc.cbp" />
+		<Project filename="iBook/iBshd.cbp" />
+		<Project filename="arkim/tevt/arksh.cbp" />
+		<Project filename="arkim/tevt/arksh32.cbp" />
+		<Project filename="arkim/tevt/arkshd.cbp">
+			<Depends filename="../common/kplibwd.cbp" />
+		</Project>
+		<Project filename="xml/tux_gecko/tux_gecko.cbp" />
+		<Project filename="xml/tux_gecko/tux_test.cbp" />
+		<Project filename="rlz/rlzt2x.cbp" />
+		<Project filename="xml/xmlrpt.cbp" />
+		<Project filename="xml/MSHTML/MSHTMLTest.cbp" />
+		<Project filename="../cbp2mak/xml2c.cbp" />
+		<Project filename="pdf/pdfsech/pdfsech.cbp" />
+		<Project filename="../kpstart/decfdf85.cbp" />
+		<Project filename="../kpstart/kpsttreg.cbp" />
+		<Project filename="../kpstart/kpsttun.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
