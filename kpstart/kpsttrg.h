@@ -8,24 +8,16 @@
 
 
 // ---------------
-// praneðimø piktogramos ID
-//
-// #define KP_IDI_SETUP_ICON  124
+// praneðimø piktogramos
+// turi bûti apibrëþtos resursø faile
+#define KP_IDI_SETUP_ICON           301 // setup.ico
+#define KP_IDI_OPEN_ICON            324 // open.ico
 
 
 // ---------------
-// Iðkvieèiama vienà kartà programos pradþioje, neigiamas atsakymas - registracija nepavyko.
-// Diegiamiems produktams:
-//    Atlieka licencijos registracijos procedûrà pirmo programos paleidimo metu. 
-//    Gautas atsakymas ið registravimo serverio atsimenamas, o programà paleidþiant kitus kartus, tik tikrinama, 
-//    ar tie kodai neiðsitrynë ir ar vis dar atitinka kompiuterio parametrus.
-//    Jeigu produktas registruojamas atskira programa registr.exe - èia tik patikrinimas, registracijos procedûros nëra,
-// Atmintukams:
-//    Tikrina, ar ákiðtas produkto atmintukas.
-// Naudojimas:
-//    if(SUCCEEDED(KpsTestReg())){ ... }
-//
-#define KpsTestReg KpsTR
+// Licencijavimo bibliotekos inicializavimas.
+// Iðkvieèiama vienà kartà programos pradþioje.
+// Neigiamas atsakymas - inicializacija nepavyko.
 extern
 #ifdef KPSTTRG_DLL
 "C" // __declspec(dllexport)
@@ -33,7 +25,62 @@ extern
 #ifdef KPSTTRG_DLL_IMP
 "C" __declspec(dllimport)
 #endif
-HRESULT KpsTestReg(void);
+HRESULT KpsInit();
+
+
+// ---------------
+// Licencijavimo bibliotekos darbo uþbaigimas.
+// Iðkvieèiama vienà kartà programos pabaigoje.
+extern
+#ifdef KPSTTRG_DLL
+"C" // __declspec(dllexport)
+#endif
+#ifdef KPSTTRG_DLL_IMP
+"C" __declspec(dllimport)
+#endif
+HRESULT KpsClose();
+
+
+// ---------------
+// Licencijos registravimas
+// Diegiamiems produktams:
+//    Atlieka licencijos registracijos procedûrà pirmo programos paleidimo metu. 
+//    Gautas atsakymas ið registravimo serverio atsimenamas, o programà paleidþiant kitus kartus,
+//    tik tikrinama, ar tie kodai neiðsitrynë ir ar vis dar atitinka kompiuterio parametrus.
+//    Neigiamas atsakymas - licencijos registracija nepavyko.
+// Atmintukams:
+//    Tikrina, ar ákiðtas produkto atmintukas.
+//    Neigiamas atsakymas - licencijuotas atmintukas nerastas.
+// Naudojimas:
+//    if(SUCCEEDED(KpsTestReg())){ ... }
+//
+#define KpsTR KpsReg
+#define KpsTestReg KpsReg
+extern
+#ifdef KPSTTRG_DLL
+"C" // __declspec(dllexport)
+#endif
+#ifdef KPSTTRG_DLL_IMP
+"C" __declspec(dllimport)
+#endif
+HRESULT KpsReg();
+
+
+// ---------------
+// Licencijos tikrinimas
+// Diegiamiems produktams:
+//    Tik patikrina, ar registracijos kodai atitinka kompiuterio parametrus,
+//    registracijos procedûra neatliekama.
+// Atmintukams – tas pats, kaip ir KpsReg() 
+//
+extern
+#ifdef KPSTTRG_DLL
+"C" // __declspec(dllexport)
+#endif
+#ifdef KPSTTRG_DLL_IMP
+"C" __declspec(dllimport)
+#endif
+HRESULT KpsTest();
 
 
 // ---------------------------
@@ -73,10 +120,17 @@ extern
 #ifdef KPSTTRG_DLL_IMP
 "C" __declspec(dllimport)
 #endif
-HRESULT KpsUnReg(void);
+HRESULT KpsUnReg();
 
 // -----------------
 // produkto id
-extern int GetProdVer(void);
+extern
+#ifdef KPSTTRG_DLL
+"C" // __declspec(dllexport)
+#endif
+#ifdef KPSTTRG_DLL_IMP
+"C" __declspec(dllimport)
+#endif
+int GetProdVer();
 
 #endif // #ifndef kpsttrg_included

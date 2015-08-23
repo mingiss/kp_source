@@ -1298,7 +1298,8 @@ public:
    HRESULT InitStApp(HINSTANCE hInstance, const unsigned char *lpszIniFName, LPCSTR /* LPSTR */ lpCmdLine, KpStModes iStMode, // former InitApp
                         bool bCommonAppInitiated = False,   // bCommonAppInitiated = True, jeigu norim InitCommonApp(), tada atidaryt langus, o tik tada InitStApp()
                                                             // (nes ilgai uþtrunka ir langai neatsidaro)
-                        bool *pbLicEntered = NULL); // perduoda á CheckReg()                                                             
+                        bool *pbLicEntered = NULL,          // perduoda á CheckReg()
+                        bool bCheckReg = True);              // jei False – netikrina ir neregistruoja licencijos                                               
    HRESULT SetTimers(void);
 
    HRESULT StartCmd(const unsigned char *lpszCmdLine = null, const unsigned char *lpszPwd = null); // jei lpszCmdLine != null ar lpszPwd != null,
@@ -1676,12 +1677,13 @@ private:
 
 //-----------------------
 public:
-   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = False, bool bRunTime = False);
+   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = False, bool bRunTime = False, bool bVerbose = True);
                               // compares stored installation key with computer ID,
                               //    requests an input of new key if unsuccessfull
                               //    pbLicEntered - returns True, if lic. entering dialog was opened
                               // bRunTime – iðkvietimas ið ProcessRestDays() – iðvedinëti praneðimus apie pasibaigusá lic. galiojimà ir 
-                              //    neinicializuoti RestDays kintamøjø – jie dinamiðkai dekrementuojami, o CheckReg() iðkvietimas dar prieð iðsaugojimà   
+                              //    neinicializuoti RestDays kintamøjø – jie dinamiðkai dekrementuojami, o CheckReg() iðkvietimas dar prieð iðsaugojimà
+                              // bVerbose – jei False – nieko neklausinëja, neávedinëja licencijø ir neregistruoja, tik gràþina info apie licencijos legalumà   
                               
 
    HRESULT RemoveReg(HRESULT hRetc, HINSTANCE hInst); // removes installation

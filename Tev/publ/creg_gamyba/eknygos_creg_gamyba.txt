@@ -1,0 +1,36 @@
+Sertifikuoto PDF e. knygos keptuvo diegimas
+
+- Sumontuojam aplankus F, O ir Q á diskus F:, O: ir Q: (batfailio pavyzdys – mount_drives.bat).
+- Ádiegiam Perl interpretatoriø: install\Perl\APi522e.exe
+– Ádiegiam Inno Setup diegimo paketø kompiliatoriø: 
+    – install\Inno_Setup_5.3.10\isetup-5.3.10.exe
+    – Inno Setup praneðimø failus ið install\Inno_Setup_5.3.10_Languages kopijuojam á Inno Setup 
+        diegimo vietos pakatalogá Languages.
+    – Inno Setup diegimo aplankà padarom prieinamà raðymui e. knygø gamybos Windows vartotojui.
+– Ádiegiam MinGW C++ kompiliatoriø: install\TDM-MinGW_471\tdm64-gcc-4.7.1-3.exe
+– Failuose F:\kp\kpstart\kpsttrg_creg.mak ir F:\kp\kpstart\cert\Launcher\src\Launcher.mak 
+    pakoreguojam kintamojo ProgFiles reikðmæ, kad rodytø programø diegimo aplankà %ProgramFiles%.
+    Patikrinam, ar kintamieji CPP, CC ir AR teisingai nustatyti á MingW kompiliatoriaus TDM-MinGW_471
+    ádiegtus paleidimo failus. 
+– Aplankà F:\kp\bin átraukiam á %PATH%.
+
+
+Sertifikuoto PDF e. knygos gamybos þingsniai:
+
+- Sukuriam aplankà Q:\Ebook_DB\TEV\<ProjID> (<ProjID> – geniss.ini failo parametras ProjID).
+– Á aplankà Q:\Ebook_DB\TEV\<ProjID> kopijuojam failus ið O:\eknygu_gamyba\sablonas_creg
+– Á aplankà Q:\Ebook_DB\TEV\<ProjID> kopijuojam projekto parametrø failà geniss.ini
+    (eksportuojam ið Jûros arba uþpildom pagal pavyzdá. 
+    O:\eknygu_gamyba\eknygos_creg_geniss_pavyzdys.ini).
+    Lauke ExeFName turi bûti sertifikato failo vardas be prievardþio .pfx 
+    Lauke Password – sertifikato slaptaþodis. 
+– Á aplankà Q:\Ebook_DB\TEV\<ProjID> kopijuojam sertifikato failà <ExeFName>.pfx 
+– Á aplankà Q:\Ebook_DB\TEV\<ProjID>\files_sh kopijuojam sertifikuotà PDF failà *.tev 
+    (geniss.ini parametras StartPDF).
+– Á aplankà Q:\Ebook_DB\TEV\<ProjID>\files kopijuojam ikonos failà <ProjID>.iso 
+    (geniss.ini parametras IconFName).
+– Paleidþiam geniss.exe.
+– Paleidþiam sugeneruotà geniss.bat.
+– Paleidþiam sugeneruotà gen_creg.bat.
+– Paleidþiam sugeneruotà make_creg_local.bat. Klaidø ieðkom faile make_creg.log.
+– Aplanke Output atsiras diegimo failas <ProjID>_diegimas.exe.

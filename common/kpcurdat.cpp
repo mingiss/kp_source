@@ -75,4 +75,4 @@ using namespace std;
 #include "xmln.h"
 #include "kpstap.h"
 
-extern const unsigned char lpszProdDate[] = "2015.08.22";
+extern const unsigned char lpszProdDate[] = "2015.08.23";

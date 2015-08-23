@@ -37,11 +37,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<ResourceCompiler>
-			<Add directory="F:\kp\source\common" />
-			<Add directory="F:\kp\source\Tev\iBook" />
-		</ResourceCompiler>
-		<Unit filename="kpstart.rc">
+		<Unit filename="kpstt.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="kpsttreg.cpp" />

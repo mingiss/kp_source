@@ -634,7 +634,8 @@ int ii;
 
 // -----------------------------------------
 HRESULT KpStApp::InitStApp(HINSTANCE hInstance, const unsigned char *lpszIniFName, 
-   LPCSTR lpCmdLine, KpStModes iStMode, bool bCommonAppInitiated, bool *pbLicEntered)
+   LPCSTR lpCmdLine, KpStModes iStMode, bool bCommonAppInitiated, bool *pbLicEntered,
+   bool bCheckReg)
 {
 HRESULT retc = S_OK;
 HRESULT retc0 = S_OK;
@@ -838,6 +839,7 @@ KpMsgOutF(dir_buf);
                                        // StartGrp net ir nepririðtam reikia – kad nusiimtø KP11_BLOCK_PROCESSING
          (m_iKpStMode == KpStLicSvrMode) || (m_iKpStMode == KpStrpdMode)
       ) &&
+      bCheckReg &&
       SUCCEEDED(retc) // FAILED(retc) //
 // :00402312 837DD800                cmp dword[ebp-28], 000
 // :00402316 7D02                    jge 0040231A  // Audrius keièia á // :00402316 7C02                    jl 0040231A

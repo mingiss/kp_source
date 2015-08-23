@@ -7034,7 +7034,7 @@ return(retc);
 
 
 // -------------------------------------------
-HRESULT KpStApp::CheckReg(HINSTANCE hInst, bool *pbLicEntered, bool bTestRestDays, bool bRunTime)
+HRESULT KpStApp::CheckReg(HINSTANCE hInst, bool *pbLicEntered, bool bTestRestDays, bool bRunTime, bool bVerbose)
 {
 HRESULT retc = S_OK;
 HRESULT retc0 = S_OK;
@@ -7258,6 +7258,9 @@ EmuTv.GetHp11VariableLong(&rest_mins, KP11_REST_MINS);
 PutLogMessage_("CHKRG() 6: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init, rest_mins);
 #endif
 
+         if (bVerbose)
+         {
+         
          if((retc == KP_E_KWD_NOT_FOUND) || (retc == KP_E_ILL_CODE) || (retc == KP_E_REFUSED) || (retc == KP_E_EXPIRED) ||
             (retc == KP_E_FILE_FORMAT)) // ðitaip gaunasi, kai failo nëra – EOF duoda tik po pirmos eilutës perskaitymo
          {
@@ -7474,6 +7477,8 @@ PutLogMessage_("CHKRG() 6.2: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_in
             }
          }
 
+         } // if (bVerbose)
+         
 //       if(ci_direct) retc0=SaveCompID(False); if(SUCCEEDED(retc)) retc=retc0;
 
       } // if(bound)

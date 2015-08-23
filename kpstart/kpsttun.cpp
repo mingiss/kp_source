@@ -12,13 +12,20 @@ using namespace std;
 
 int main()
 {
-    HRESULT retc = KpsTestReg();
-    int prod_ver = GetProdVer();
-    cout << "Produktas " << prod_ver << " " <<
-        (SUCCEEDED(retc)? "" : "ne") << "uzregistruotas." << endl;
+    HRESULT retc = KpsInit();
+    if (FAILED(retc))
+        cout << "Inicializavimo klaida" << endl;
 
-    retc = KpsUnReg();
-    cout << "Produkto " << prod_ver << " licencija " <<
-        (SUCCEEDED(retc)? "" : "ne") << "panaikinta." << endl;
-    return 0;
+    if (SUCCEEDED(retc))
+    {
+        int prod_ver = GetProdVer();
+        retc = KpsUnReg();
+        cout << "Produkto " << prod_ver << " licencija " <<
+            (SUCCEEDED(retc)? "" : "ne") << "panaikinta." << endl;
+
+        HRESULT retc0 = KpsClose();
+        if (SUCCEEDED(retc)) retc = retc0;
+    }
+    
+    return retc;
 }

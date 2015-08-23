@@ -1,0 +1,5 @@
+// ------------------------------
+#include "kpsttrg.h"
+
+KP_IDI_OPEN_ICON      ICON    DISCARDABLE     "f:/kp/source/common/open.ico"
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "f:/kp/source/common/setup.ico"
