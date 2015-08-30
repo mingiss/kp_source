@@ -11,6 +11,5 @@ mkdir cert
 cd cert
 mkdir Launcher
 cd Launcher
-:: pwd: tev_mercurial
-git clone https://tev_hg@bitbucket.org/tev_hg/launcher.git src
+git clone https://tev_hg:tev_mercurial@bitbucket.org/tev_hg/launcher.git src
 

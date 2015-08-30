@@ -4,6 +4,7 @@
 
 //
 // 2013-03-03  mp  m_bMDImaximized – sending Ctrl+Shift+L to Adobe Reader flag – only one time  
+// 2015-08-30  mp  atskirtas Kpsttrg bibliotekos kreipiniai KpsInit(), KpsClose() ir KpsTest() (tik patikrinimui be registracijos)
 //
 
 

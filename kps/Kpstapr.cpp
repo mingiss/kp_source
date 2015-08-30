@@ -6,6 +6,8 @@
 // 2012.10.01  mp  pasilpnintas admino reikalavimas raðant á HKEY_CURRENT_USER SaveCompID()
 // 2012.10.03  mp  bugas terminuotø lic. minuèiø sk. inicializavime
 // 2012.10.26  mp  lic. termino dinaminis pailginimas kreipinio á serverá bûdu; iki ðiol galëjo tik patrumpëti
+// 2015-08-23  mp  atskirtas Kpsttrg bibliotekos kreipiniai KpsInit(), KpsClose() ir KpsTest() (tik patikrinimui be registracijos)
+// 2015-08-30  mp  KpsTest() perdarytas, kad neraðytø jokiø kodø
 //
 
 #define Logging
@@ -1767,7 +1769,9 @@ PutLogMessage_("[RC 2] phys %d", cMemBank[KP11_COMPID/2]);
 #endif
                }
             }
-            if(ci_direct) retc0 = this_ptr->SaveCompID(False); if(SUCCEEDED(retc)) retc=retc0;
+            // neraðom èia, nejudinam virtualizacijos, èia tik perskaitom áraðytà
+            // uþteks kad RemoveReg() áraðys
+            // if(ci_direct) retc0 = this_ptr->SaveCompID(False); if(SUCCEEDED(retc)) retc=retc0;
 
 #endif // #else // #if FALSE
 
@@ -7216,7 +7220,9 @@ PutLogMessage_("[ch p 8] ik: %x %x %x %x", cMemBank[KP11_INST_KEY1/2], cMemBank[
                      {
 // TODO jei objektø þiûryklë – áraðyti data.dat failà á objektà
                      }
-                     else /* retc0 = */ SaveKeyDat(); // data.dat raðom tik jei ne objektø þiûryklë
+                     else
+                        if (bVerbose) // paprasto tylaus tikrinimo metu nieko neraðom -- paleidëjo reþimas, ne adminas, virtualizacijos nejudinam
+                            /* retc0 = */ SaveKeyDat(); // data.dat raðom tik jei ne objektø þiûryklë
                   }
 
                /* if(SUCCEEDED(retc0)) retc0= */ GetCommonCompID();
@@ -7260,7 +7266,7 @@ PutLogMessage_("CHKRG() 6: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init
 
          if (bVerbose)
          {
-         
+
          if((retc == KP_E_KWD_NOT_FOUND) || (retc == KP_E_ILL_CODE) || (retc == KP_E_REFUSED) || (retc == KP_E_EXPIRED) ||
             (retc == KP_E_FILE_FORMAT)) // ðitaip gaunasi, kai failo nëra – EOF duoda tik po pirmos eilutës perskaitymo
          {
@@ -7478,7 +7484,7 @@ PutLogMessage_("CHKRG() 6.2: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_in
          }
 
          } // if (bVerbose)
-         
+
 //       if(ci_direct) retc0=SaveCompID(False); if(SUCCEEDED(retc)) retc=retc0;
 
       } // if(bound)
@@ -7497,7 +7503,9 @@ PutLogMessage_("CHKRG() 6.2: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_in
          }
          else
          {
-            retc0 = SaveKeyDat(); // data.dat raðom tik jei ne objektø þiûryklë
+            if (bVerbose) // paprasto tylaus tikrinimo metu nieko neraðom -- paleidëjo reþimas, ne adminas, virtualizacijos nejudinam
+                retc0 = SaveKeyDat(); // data.dat raðom tik jei ne objektø þiûryklë
+
             if((m_iKpStMode == KpStRegMode) && SUCCEEDED(retc))
             {
                retc = retc0; // registr.exe èia rimta klaida – neáraðius neveiks produktas
@@ -7543,7 +7551,6 @@ PutLogMessage_("CHKRG() 8: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init
 
 return(retc);
 }
-
 
 // -------------------------------------------
 HRESULT KpStApp::RemoveReg(HRESULT hRetc, HINSTANCE hInst)

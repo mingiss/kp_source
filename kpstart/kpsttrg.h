@@ -2,6 +2,8 @@
 // kpsttrg.h
 // produkto licencijos registracija ir vëlesnis jos tikrinimas
 //
+// 2015-08-23  mp  atskirtas Kpsttrg bibliotekos kreipiniai KpsInit(), KpsClose() ir KpsTest() (tik patikrinimui be registracijos)
+//
 
 #ifndef kpsttrg_included
 #define kpsttrg_included
