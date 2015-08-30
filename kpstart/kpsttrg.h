@@ -46,7 +46,7 @@ HRESULT KpsClose();
 // ---------------
 // Licencijos registravimas
 // Diegiamiems produktams:
-//    Atlieka licencijos registracijos procedûrà pirmo programos paleidimo metu. 
+//    Atlieka licencijos registracijos procedûrà pirmo programos paleidimo metu.
 //    Gautas atsakymas ið registravimo serverio atsimenamas, o programà paleidþiant kitus kartus,
 //    tik tikrinama, ar tie kodai neiðsitrynë ir ar vis dar atitinka kompiuterio parametrus.
 //    Neigiamas atsakymas - licencijos registracija nepavyko.
@@ -56,8 +56,6 @@ HRESULT KpsClose();
 // Naudojimas:
 //    if(SUCCEEDED(KpsTestReg())){ ... }
 //
-#define KpsTR KpsReg
-#define KpsTestReg KpsReg
 extern
 #ifdef KPSTTRG_DLL
 "C" // __declspec(dllexport)
@@ -67,13 +65,16 @@ extern
 #endif
 HRESULT KpsReg();
 
+inline HRESULT KpsTestReg() { HRESULT retc = KpsInit(); if (SUCCEEDED(retc)) retc = KpsReg(); return retc; }
+#define KpsTR KpsTestReg
+
 
 // ---------------
 // Licencijos tikrinimas
 // Diegiamiems produktams:
 //    Tik patikrina, ar registracijos kodai atitinka kompiuterio parametrus,
 //    registracijos procedûra neatliekama.
-// Atmintukams – tas pats, kaip ir KpsReg() 
+// Atmintukams – tas pats, kaip ir KpsReg()
 //
 extern
 #ifdef KPSTTRG_DLL
@@ -86,8 +87,8 @@ HRESULT KpsTest();
 
 
 // ---------------------------
-// Taimerio apdorojimo procedûra, iðkvieèiama kaip notifikacijos callbackas ið kiekvieno aktyvaus 
-// lango funkcijos iðkvietimo (panaðiai kaip DefWindowProc()) arba kartu su kiekvienu DispatchMessage() 
+// Taimerio apdorojimo procedûra, iðkvieèiama kaip notifikacijos callbackas ið kiekvieno aktyvaus
+// lango funkcijos iðkvietimo (panaðiai kaip DefWindowProc()) arba kartu su kiekvienu DispatchMessage()
 // pagrindiniame programos praneðimø apdorojimo cikle.
 // Patá taimerá paleidþia KpsTestReg(), ðita paprogramë tik patikrina, ar perduotas praneðimo parametras nëra jai skirtas WM_TIMER,
 // jei taip – atlieka tikrinimo procedûrà.
