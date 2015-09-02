@@ -23,3 +23,5 @@
 *.xml
 *.cbTemp
 *.depend
+*~
+
