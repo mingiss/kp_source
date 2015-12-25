@@ -14,8 +14,8 @@ del /Q libkpsttrg.a
 :: echo make -f kpsttrg6432.mak
 :: make -f kpsttrg6432.mak
 
-echo start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build
-start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build
+echo start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build --no-batch-window-close
+start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build --no-batch-window-close
 
 goto galas
 

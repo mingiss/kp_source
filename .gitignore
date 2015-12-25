@@ -3,6 +3,7 @@
 *.a
 *.lib
 *.dll
+*.res
 *.layout
 *.sav
 *.bak
