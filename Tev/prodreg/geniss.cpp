@@ -1505,6 +1505,7 @@ HRESULT retc = S_OK;
 fstream out_file;
 unsigned char out_file_name[KP_MAX_FNAME_LEN + 100];
 bool xfs_fl = (strcmp(lpszBatName, (const unsigned char *)"make_XFS_exe") == 0); 
+bool cert_fl = (strcmp(lpszBatName, (const unsigned char *)"make_creg") == 0); 
 
    KP_ASSERT(lpszBatName, E_INVALIDARG, null, True);
    
@@ -1547,18 +1548,22 @@ bool xfs_fl = (strcmp(lpszBatName, (const unsigned char *)"make_XFS_exe") == 0);
 
          out_file << "del " << lpszBatName << ".log" << endl;
          out_file << "call O:\\eknygu_gamyba\\" << lpszBatName << SetupFileLangSuffixes[iMsgLangOff] << ".bat " << Publisher << " " << ProjID << " ";
-         if (!xfs_fl)
-             out_file << ExeFName << ".pfx " << Password << " 1>> " << lpszBatName << ".log  2>&1" << endl;
-         else 
+         if (xfs_fl)
          {
              out_file << SplashBMP << " 1>> " << lpszBatName << ".log  2>&1" << endl;
 
              out_file << "del " << lpszBatName << "_sh.log" << endl;
              out_file << "call O:\\eknygu_gamyba\\" << lpszBatName << "_sh" << SetupFileLangSuffixes[iMsgLangOff] << ".bat " << Publisher << " " << ProjID << " " << SplashBMP << " 1>> " << lpszBatName << "_sh.log  2>&1" << endl;
          }
-          
-         if((out_file.fail() || out_file.eof()) && SUCCEEDED(retc))
-            retc=KpErrorProc.OutputErrorMessage(KP_E_FERROR, out_file_name, True, __FILE__, __LINE__, 0L);
+         else
+         {
+            if (cert_fl) 
+                out_file << ExeFName << ".pfx " << Password;
+            out_file << " 1>> " << lpszBatName << ".log  2>&1" << endl;
+         }
+         
+         if ((out_file.fail() || out_file.eof()) && SUCCEEDED(retc))
+            retc = KpErrorProc.OutputErrorMessage(KP_E_FERROR, out_file_name, True, __FILE__, __LINE__, 0L);
 
          out_file.close();
 //       if(out_file.close() == NULL)

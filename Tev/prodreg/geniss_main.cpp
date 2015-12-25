@@ -307,6 +307,7 @@ cout << "CidMode:      " << " 0x" << hex << CidMode << endl;
 // /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"copy_XFS_po_exe");
    /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_XFS_exe");
    /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_creg");
+   /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_KURK");
    
 // ------------------------
 /* if(SUCCEEDED(retc)) */ if(theKpStAppPtr != NULL){ retc0 = theKpStAppPtr->CloseStApp(retc, KP_My_Documents);  if(SUCCEEDED(retc)) retc = retc0; }

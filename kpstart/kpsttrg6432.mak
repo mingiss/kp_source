@@ -9,13 +9,19 @@ ObjDir = $(ProdDir)/$(Proj)_obj
 
 #ProgFiles = C:/Program Files (x86)
 #ProgFiles = $(ProgramFiles)
-#ProgFiles = C:/PROGRA~1
+ProgFiles = C:/PROGRA~1
 #ProgFiles = C:/PROGRA~2
-ProgFiles = D:/PROGRA~1
+#ProgFiles = D:/PROGRA~1
 
-CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
-CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
-AR = "$(ProgFiles)/CodeBlocks/MinGW/bin/ar.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
+CPP = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/i686-w64-mingw32-g++.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW64/bin/g++.exe"
+#CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
+CC = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/i686-w64-mingw32-gcc.exe
+#CC = "$(ProgFiles)/CodeBlocks/MinGW64/bin/gcc.exe
+#AR = "$(ProgFiles)/CodeBlocks/MinGW/bin/ar.exe"
+AR = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/ar.exe"
+#AR = "$(ProgFiles)/CodeBlocks/MinGW64/bin/ar.exe"
 
 CXXINCS = \
    -I$(CommonDir)/common \
