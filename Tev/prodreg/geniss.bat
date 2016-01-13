@@ -15,12 +15,14 @@
     call files_flash_upd.bat
     call files_flash_upd_whole.bat
     call files_flash_start.bat
-    rem call files_flash_start_upd.bat
+    :: call files_flash_start_upd.bat
 
     call files_net.bat
     call files_svr.bat
     call files_cli.bat
     call files_rez.bat
+
+    call files_finst.bat
 
     call files_chkvol.bat
 

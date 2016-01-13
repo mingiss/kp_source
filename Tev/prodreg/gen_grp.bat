@@ -1,10 +1,10 @@
 @echo off
 
 
-copy "%ProgramFiles%\Inno Setup 5\Languages\Lithuanian_evad.isl" "%ProgramFiles%\Inno Setup 5\Default.isl" > nul
+copy "%ProgramFiles%\Inno Setup 5\Languages\Lithuanian_KMP.isl" "%ProgramFiles%\Inno Setup 5\Default.isl" > nul
 
 
-rem call geniss.bat
+:: call geniss.bat
 geniss.exe 1>> geniss.lst  2>&1
 
 
