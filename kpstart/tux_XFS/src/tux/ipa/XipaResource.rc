@@ -1,0 +1,5 @@
+#include "res_com.h"
+
+KP_IDI_SETUP_ICON     ICON    DISCARDABLE     "res/setup.ico"
+
+10 ICON DISCARDABLE "res/"

@@ -305,6 +305,8 @@ cout << "CidMode:      " << " 0x" << hex << CidMode << endl;
 // /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"copy_ico");
 // /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"copy_XFS_pries_exe");
 // /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"copy_XFS_po_exe");
+   /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_cd");
+   /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_free");
    /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_XFS_exe");
    /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_creg");
    /* if(SUCCEEDED(retc)) retc = */ OutputGenLocalBat((const unsigned char *)"make_KURK");
