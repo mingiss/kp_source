@@ -2534,6 +2534,18 @@ bool startsel_exe_exists = False;
             break;
          }
 
+         if(SUCCEEDED(retc))
+         {
+            strcpy(check_fname, "License.rtf");
+            in_file.open((const char *)check_fname, ios_base::in | ios_base::binary);
+            if(!in_file.fail())
+            {
+               out_file << "LicenseFile = " << check_fname << endl;
+               out_file << endl;
+               in_file.close();
+            }
+         }
+
          if(SUCCEEDED(retc)) switch(iGenType)
          {
          case GenIssCert:
@@ -2762,7 +2774,7 @@ bool startsel_exe_exists = False;
                      if(!in_file.fail())
                      {
 //                      out_file << "Name: \"{group}\\Registracija\"; Filename: \"{code:GetAppPathStr}\\registr.exe\"; IconFilename:\"{code:GetAppPathStr}\\setup01.ico\"; WorkingDir: \"{code:GetAppPathStr}\";" << endl;
-                        out_file << "Name: \"{group}\\";
+                        out_file << ";Name: \"{group}\\";
                            out_file << GENISS_LINK_REG; 
                            out_file << "\"; Filename: \"{code:GetAppPathStr}\\registr.exe\"; IconFilename:\"{code:GetAppPathStr}\\registr.exe\"; WorkingDir: \"{code:GetAppPathStr}\";" << endl;
 
@@ -2789,7 +2801,7 @@ bool startsel_exe_exists = False;
 //                in_file.open(check_file, fstream::in | fstream::binary);
                   if((!in_file.fail()) && ((iGenType == GenIssCd) || (iGenType == GenIssSh) || (iGenType == GenIssCert) || (iGenType == GenIssSvr)))
                   {
-                     out_file << "Name: \"{group}\\";
+                     out_file << ";Name: \"{group}\\";
                         out_file << GENISS_LINK_UNREG;
                         out_file << "\"; Filename: \"{uninstallexe}\"; IconFilename:\"{code:GetAppPathStr}\\unreg.exe\"; WorkingDir: \"{code:GetAppPathStr}\";" << endl;
                   }
