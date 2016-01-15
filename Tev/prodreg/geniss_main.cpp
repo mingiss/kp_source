@@ -288,6 +288,7 @@ cout << "CidMode:      " << " 0x" << hex << CidMode << endl;
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_cd_sh.ini");
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_cd_tux.ini");
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_cd_tux_sh.ini");
+   /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_cd_free.ini");
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_flash.ini");
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_flash_tux.ini");
    /* if(SUCCEEDED(retc)) retc = */ OutputKpstartIni((const unsigned char *)"kpstart_net.ini");

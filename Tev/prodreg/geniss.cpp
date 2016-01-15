@@ -5332,7 +5332,7 @@ static unsigned char prname[KP_MAX_FNAME_LEN+1];
    {
       if(strstr(lpszIniFName, "_cd"))
       {
-         if(SUCCEEDED(retc)) retc = theKpStAppPtr->SetIniBound(True);
+         if(SUCCEEDED(retc)) retc = theKpStAppPtr->SetIniBound(!strstr(lpszIniFName, "_free"));
          if(SUCCEEDED(retc)) retc = theKpStAppPtr->SetIniCheckFlash(False);
          if(SUCCEEDED(retc)) retc = theKpStAppPtr->SetIniLicFlash(False);
          if(SUCCEEDED(retc)) retc = theKpStAppPtr->SetIniRegURL(KPST_PRODREG_URL_INI);

@@ -28,8 +28,8 @@ mkdir files_sh\DAT0
 copy kpstart_cd.ini files_sh\DAT0\sts.ini
 :nodiag
 
-echo copy kpstart_cd.ini F:\kp\source\kpstart\kpstart.ini
-copy kpstart_cd.ini F:\kp\source\kpstart\kpstart.ini
+echo copy kpstart_cd_free.ini F:\kp\source\kpstart\kpstart.ini
+copy kpstart_cd_free.ini F:\kp\source\kpstart\kpstart.ini
 echo F:
 F:
 echo cd \kp\source\kpstart
