@@ -1,6 +1,6 @@
-# kpstreg.exe make failas MinGW 4.5.1
+# kpstart.exe make failas MinGW 4.5.1
 
-Proj = kpstreg
+Proj = kpstart
 
 BaseDisk = F:
 CommonDir = $(BaseDisk)/source
@@ -38,12 +38,15 @@ CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1
 CPPFLAGS = $(CXXFLAGS) 
 CCFLAGS = $(CXXFLAGS) 
 
-RCINC = -I$(BaseDir)/common
+RCINC = \
+   -I$(BaseDir)/common \
+   -I$(TevDir)/iBook
+   
 #RCFLAGS = $(RCINC) -Jrc -Ocoff
 #RCFLAGS = $(RCINC) -Jrc -Ores
 RCFLAGS = $(RCINC)
 
-LDFLAGS =  -mwindows -Wl,-Map,kpstreg_mingw.map
+LDFLAGS =  -mwindows -Wl,-Map,kpstart_mingw.map
 # LDFLAGS = -Wl,-subsystem,windows
 
 OBJ = \
@@ -58,11 +61,11 @@ OBJ = \
    $(ObjDir)/iBsht0.o \
    $(ObjDir)/KpGecko0.o \
    $(ObjDir)/kpstapg0.o \
-   $(ObjDir)/kpstreg_ini.o \
-   $(ObjDir)/kpstreg.o
+   $(ObjDir)/kpstart_ini.o \
+   $(ObjDir)/kpstart.o
 
-# RES  = $(ObjDir)/kpstreg.res
-RES  = $(ObjDir)/kpstreg_res.o
+# RES  = $(ObjDir)/kpstart.res
+RES  = $(ObjDir)/kpstart_res.o
 
 # -L"$(ProgFiles)/CodeBlocks/MinGW/lib" - neveikia kažkodėl, perkėliau į $(BaseDir)/common/MinGW/lib    
 
@@ -121,14 +124,14 @@ $(ObjDir)/KpGecko0.o: $(TevDir)/xml/KpGecko0.cpp
 $(ObjDir)/Kpstapg0.o: $(BaseDir)/kps/Kpstapg0.cpp
 	$(CPP) -c $(BaseDir)/kps/Kpstapg0.cpp -o $(ObjDir)/Kpstapg0.o $(CPPFLAGS)
 
-$(ObjDir)/kpstreg_ini.o: $(ProdDir)/kpstreg_ini.cpp
-	$(CPP) -c $(ProdDir)/kpstreg_ini.cpp -o $(ObjDir)/kpstreg_ini.o $(CPPFLAGS)
+$(ObjDir)/kpstart_ini.o: $(ProdDir)/kpstart_ini.cpp
+	$(CPP) -c $(ProdDir)/kpstart_ini.cpp -o $(ObjDir)/kpstart_ini.o $(CPPFLAGS)
  
-$(ObjDir)/kpstreg.o: $(ProdDir)/kpstreg.cpp
-	$(CPP) -c  $(ProdDir)/kpstreg.cpp -o $(ObjDir)/kpstreg.o $(CPPFLAGS) 
+$(ObjDir)/kpstart.o: $(ProdDir)/kpstart.cpp
+	$(CPP) -c  $(ProdDir)/kpstart.cpp -o $(ObjDir)/kpstart.o $(CPPFLAGS) 
 
-# $(ObjDir)/kpstreg.res: $(ProdDir)/kpstreg.rc 
-#	$(WINDRES) -i $(ProdDir)/kpstreg.rc -o $(ObjDir)/kpstreg.res $(RCFLAGS) 
+# $(ObjDir)/kpstart.res: $(ProdDir)/kpstart.rc 
+#	$(WINDRES) -i $(ProdDir)/kpstart.rc -o $(ObjDir)/kpstart.res $(RCFLAGS) 
 
-$(ObjDir)/kpstreg_res.o: $(ProdDir)/kpstreg.rc 
-	$(WINDRES) -i $(ProdDir)/kpstreg.rc -o $(ObjDir)/kpstreg_res.o $(RCFLAGS) 
+$(ObjDir)/kpstart_res.o: $(ProdDir)/kpstart.rc 
+	$(WINDRES) -i $(ProdDir)/kpstart.rc -o $(ObjDir)/kpstart_res.o $(RCFLAGS) 

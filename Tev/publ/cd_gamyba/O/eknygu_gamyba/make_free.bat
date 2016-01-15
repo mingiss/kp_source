@@ -42,6 +42,7 @@ rem ---------------------------------
 echo del /S/Q F:\kp\source\kpstart\kpstart_obj
 del /S/Q F:\kp\source\kpstart\kpstart_obj
 call F:\kp\source\kpstart\kpstart_mak.bat
+:: call F:\kp\source\kpstart\kpstart6432_mak.bat
 
 
 rem ---------------------------------

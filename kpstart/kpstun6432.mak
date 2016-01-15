@@ -1,6 +1,6 @@
-# kpstreg.exe make failas MinGW 4.5.1
+# kpstun.exe make failas MinGW 4.7.1 TDM-GCC-w64
 
-Proj = kpstreg
+Proj = kpstun
 
 BaseDisk = F:
 CommonDir = $(BaseDisk)/source
@@ -14,9 +14,12 @@ ObjDir = $(ProdDir)/$(Proj)_Obj
 ProgFiles = C:/PROGRA~1
 #ProgFiles = C:/PROGRA~2
 
-CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
-CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
-WINDRES = "$(ProgFiles)/CodeBlocks/MinGW/bin/windres.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
+CPP = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-g++.exe"
+#CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
+CC = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-gcc.exe"
+#WINDRES = "$(ProgFiles)/CodeBlocks/MinGW/bin/windres.exe"
+WINDRES = "$(ProgFiles)/CodeBlocks/MinGW64/bin/windres.exe"
 
 CXXINCS = \
    -I$(CommonDir)/common \
@@ -34,7 +37,7 @@ CXXINCS = \
    -I$(TevDir)/lzdsh \
    -I$(ProdDir)
 
-CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1
+CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1 -std=c++11 -m32
 CPPFLAGS = $(CXXFLAGS) 
 CCFLAGS = $(CXXFLAGS) 
 
@@ -43,7 +46,7 @@ RCINC = -I$(BaseDir)/common
 #RCFLAGS = $(RCINC) -Jrc -Ores
 RCFLAGS = $(RCINC)
 
-LDFLAGS =  -mwindows -Wl,-Map,kpstreg_mingw.map
+LDFLAGS =  -mwindows -Wl,-Map,kpstun_mingw.map
 # LDFLAGS = -Wl,-subsystem,windows
 
 OBJ = \
@@ -59,10 +62,10 @@ OBJ = \
    $(ObjDir)/KpGecko0.o \
    $(ObjDir)/kpstapg0.o \
    $(ObjDir)/kpstreg_ini.o \
-   $(ObjDir)/kpstreg.o
+   $(ObjDir)/kpstun.o
 
-# RES  = $(ObjDir)/kpstreg.res
-RES  = $(ObjDir)/kpstreg_res.o
+# RES  = $(ObjDir)/kpstun.res
+RES  = $(ObjDir)/kpstun_res.o
 
 # -L"$(ProgFiles)/CodeBlocks/MinGW/lib" - neveikia kažkodėl, perkėliau į $(BaseDir)/common/MinGW/lib    
 
@@ -124,11 +127,11 @@ $(ObjDir)/Kpstapg0.o: $(BaseDir)/kps/Kpstapg0.cpp
 $(ObjDir)/kpstreg_ini.o: $(ProdDir)/kpstreg_ini.cpp
 	$(CPP) -c $(ProdDir)/kpstreg_ini.cpp -o $(ObjDir)/kpstreg_ini.o $(CPPFLAGS)
  
-$(ObjDir)/kpstreg.o: $(ProdDir)/kpstreg.cpp
-	$(CPP) -c  $(ProdDir)/kpstreg.cpp -o $(ObjDir)/kpstreg.o $(CPPFLAGS) 
+$(ObjDir)/kpstun.o: $(ProdDir)/kpstun.cpp
+	$(CPP) -c  $(ProdDir)/kpstun.cpp -o $(ObjDir)/kpstun.o $(CPPFLAGS) 
 
-# $(ObjDir)/kpstreg.res: $(ProdDir)/kpstreg.rc 
-#	$(WINDRES) -i $(ProdDir)/kpstreg.rc -o $(ObjDir)/kpstreg.res $(RCFLAGS) 
+# $(ObjDir)/kpstun.res: $(ProdDir)/kpstun.rc 
+#	$(WINDRES) -i $(ProdDir)/kpstun.rc -o $(ObjDir)/kpstun.res $(RCFLAGS) 
 
-$(ObjDir)/kpstreg_res.o: $(ProdDir)/kpstreg.rc 
-	$(WINDRES) -i $(ProdDir)/kpstreg.rc -o $(ObjDir)/kpstreg_res.o $(RCFLAGS) 
+$(ObjDir)/kpstun_res.o: $(ProdDir)/kpstun.rc 
+	$(WINDRES) -i $(ProdDir)/kpstun.rc -o $(ObjDir)/kpstun_res.o $(RCFLAGS) 

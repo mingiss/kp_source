@@ -1422,7 +1422,7 @@ fstream lang_out_file;
            )
          {
 //          out_file << "echo ------------------------" << endl;
-            out_file << ":: goto skip_butord" << endl;
+            out_file << "goto skip_butord" << endl;
             out_file << endl;
             out_file << "dir /X " << js_dir << " > files";
             if((iGenType==GenIssUpd) || (iGenType==GenIssUpdWhole) || (iGenType==GenIssFlashUpd) || (iGenType==GenIssFlashUpdWhole)) out_file << FnameSuff[iGenType];

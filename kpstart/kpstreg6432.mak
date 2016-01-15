@@ -1,4 +1,4 @@
-# kpstreg.exe make failas MinGW 4.5.1
+# kpstreg.exe make failas MinGW 4.7.1 TDM-GCC-w64
 
 Proj = kpstreg
 
@@ -14,9 +14,12 @@ ObjDir = $(ProdDir)/$(Proj)_Obj
 ProgFiles = C:/PROGRA~1
 #ProgFiles = C:/PROGRA~2
 
-CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
-CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
-WINDRES = "$(ProgFiles)/CodeBlocks/MinGW/bin/windres.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
+CPP = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-g++.exe"
+#CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
+CC = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-gcc.exe"
+#WINDRES = "$(ProgFiles)/CodeBlocks/MinGW/bin/windres.exe"
+WINDRES = "$(ProgFiles)/CodeBlocks/MinGW64/bin/windres.exe"
 
 CXXINCS = \
    -I$(CommonDir)/common \
@@ -34,7 +37,7 @@ CXXINCS = \
    -I$(TevDir)/lzdsh \
    -I$(ProdDir)
 
-CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1
+CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1 -std=c++11 -m32
 CPPFLAGS = $(CXXFLAGS) 
 CCFLAGS = $(CXXFLAGS) 
 

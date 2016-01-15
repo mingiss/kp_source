@@ -1,3 +1,5 @@
+# kpstun.exe make failas MinGW 4.5.1
+
 Proj = kpstun
 
 BaseDisk = F:

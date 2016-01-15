@@ -1,3 +1,7 @@
+# libkpsttrg.a make failo bandymas MinGW MinGW 4.8.2 DWARF is QT
+# lauzia make.exe, gaminam su CodeBlocks kpsttrg.cbp
+# reiktu pabandyt su C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/mingw32-make.exe
+
 Proj = kpsttrg
 
 BaseDisk = F:

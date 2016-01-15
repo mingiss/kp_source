@@ -44,12 +44,15 @@ rem ---------------------------------
 echo del /S/Q F:\kp\source\kpstart\kpstart_obj
 del /S/Q F:\kp\source\kpstart\kpstart_obj
 call F:\kp\source\kpstart\kpstart_mak.bat
+:: call F:\kp\source\kpstart\kpstart6432_mak.bat
 echo del /S/Q F:\kp\source\kpstart\kpstreg_obj
 del /S/Q F:\kp\source\kpstart\kpstreg_obj
 call F:\kp\source\kpstart\kpstreg_mak.bat
+:: call F:\kp\source\kpstart\kpstreg6432_mak.bat
 echo del /S/Q F:\kp\source\kpstart\kpstun_obj
 del /S/Q F:\kp\source\kpstart\kpstun_obj
 call F:\kp\source\kpstart\kpstun_mak.bat
+:: call F:\kp\source\kpstart\kpstun6432_mak.bat
 
 
 rem ---------------------------------

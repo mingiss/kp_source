@@ -11,8 +11,8 @@ del /S/Q kpsttrg_obj
 rem del /Q libkpsttrg.a
 del /Q libkpsttrg.a
 
-:: echo make -f kpsttrg6432.mak
-:: make -f kpsttrg6432.mak
+:: echo make -f kpsttrg6432d.mak
+:: make -f kpsttrg6432d.mak
 
 echo start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build --no-batch-window-close
 start /wait C:\PROGRA~1\CodeBlocks\codeblocks.exe kpsttrg.cbp --build --no-batch-window-close

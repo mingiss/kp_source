@@ -1,12 +1,12 @@
-# libkpsttrg.lib make failas MinGW 4.5.1
+# libkplibwr.a make failas MinGW 4.4.1
 
-Proj = kpsttrg
+Proj = kplibwr
 
 BaseDisk = F:
 CommonDir = $(BaseDisk)/source
 BaseDir = $(BaseDisk)/kp/source
 TevDir = $(BaseDir)/Tev
-ProdDir = $(BaseDir)/kpstart
+ProdDir = $(BaseDir)/common
 ObjDir = $(ProdDir)/$(Proj)_obj
 
 #ProgFiles = C:/Program Files (x86)
@@ -15,12 +15,19 @@ ProgFiles = C:/PROGRA~1
 #ProgFiles = C:/PROGRA~2
 #ProgFiles = D:/PROGRA~1
 
-#CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
-CPP = "$(ProgFiles)/MinGW64/bin/g++.exe"
-#CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
-CC = "$(ProgFiles)/MinGW64/bin/gcc.exe"
-#AR = "$(ProgFiles)/CodeBlocks/MinGW/bin/ar.exe"
-AR = "$(ProgFiles)/MinGW64/bin/ar.exe"
+CPP = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-g++.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW64/bin/g++.exe"
+#CPP = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-g++.exe"
+#CPP = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/i686-w64-mingw32-g++.exe"
+
+CC = "$(ProgFiles)/CodeBlocks/MinGW/bin/mingw32-gcc.exe"
+#CC = "$(ProgFiles)/CodeBlocks/MinGW64/bin/gcc.exe
+#CC = "$(ProgFiles)/CodeBlocks/MinGW64/bin/x86_64-w64-mingw32-gcc.exe"
+#CC = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/i686-w64-mingw32-gcc.exe
+
+AR = "$(ProgFiles)/CodeBlocks/MinGW/bin/ar.exe"
+#AR = "$(ProgFiles)/CodeBlocks/MinGW64/bin/ar.exe"
+#AR = "C:/Qt/Qt5.3.2/Tools/mingw482_32/bin/ar.exe"
 
 CXXINCS = \
    -I$(CommonDir)/common \
@@ -29,6 +36,7 @@ CXXINCS = \
    -I$(BaseDir)/common \
    -I$(BaseDir)/kpt \
    -I$(BaseDir)/kps \
+   -I$(BaseDir)/kpstart \
    -I$(BaseDir)/kphp11 \
    -I$(TevDir)/xml \
    -I$(TevDir)/rtf \
@@ -39,7 +47,7 @@ CXXINCS = \
    -I$(TevDir)/lzdsh \
    -I$(ProdDir)
 
-CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1 -DBUFFERSIZE=4096
+CXXFLAGS = $(CXXINCS) -DEnvir=15 -DKPSTEDI_MODE=6 -DMsgLang=1 -DBUFFERSIZE=4096 -DMingwVer=441
 CPPFLAGS = $(CXXFLAGS) 
 CCFLAGS = $(CXXFLAGS) 
 
@@ -124,8 +132,6 @@ OBJ = \
    $(ObjDir)/Kpstaps.o \
    $(ObjDir)/kpstaf.o \
    $(ObjDir)/kpstape.o \
-   $(ObjDir)/kpstart_ini.o \
-   $(ObjDir)/kpsttrg.o \
    $(ObjDir)/KPTHP1.o \
    $(ObjDir)/Kptt2.o \
    $(ObjDir)/Kpttuc.o \
@@ -391,12 +397,6 @@ $(ObjDir)/Kpstaf.o: $(BaseDir)/kps/Kpstaf.cpp
 
 $(ObjDir)/Kpstape.o: $(BaseDir)/kps/Kpstape.cpp
 	$(CPP) -c $(BaseDir)/kps/Kpstape.cpp -o $(ObjDir)/Kpstape.o $(CPPFLAGS)
-
-$(ObjDir)/kpstart_ini.o: $(ProdDir)/kpstart_ini.cpp
-	$(CPP) -c $(ProdDir)/kpstart_ini.cpp -o $(ObjDir)/kpstart_ini.o $(CPPFLAGS)
-
-$(ObjDir)/kpsttrg.o: $(ProdDir)/kpsttrg.cpp
-	$(CPP) -c $(ProdDir)/kpsttrg.cpp -o $(ObjDir)/kpsttrg.o $(CPPFLAGS)
 
 $(ObjDir)/KPTHP1.o: $(BaseDir)/kpt/KPTHP1.cpp
 	$(CPP) -c $(BaseDir)/kpt/KPTHP1.cpp -o $(ObjDir)/KPTHP1.o $(CPPFLAGS)
