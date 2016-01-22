@@ -7248,7 +7248,10 @@ PutLogMessage_("CHKRG() 5: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init
 
          if(SUCCEEDED(retc)) retc = CalcInstCode();
 
-         if(SUCCEEDED(retc)) retc = TestKey();
+         if(
+             SUCCEEDED(retc) || 
+             ((retc == KP_E_FILE_FORMAT) && (!bound) && (!ch_fl))
+           ) retc = TestKey();
 
 // GetIniBound(&bound);
 // KpMsgOutF("%04x-%04x-%04x-%04x %d %d %d %x", cMemBank[KP11_INST_CODE1/2], cMemBank[KP11_INST_CODE2/2], cMemBank[KP11_INST_CODE3/2], cMemBank[KP11_INST_CODE4/2], cMemBank[KP11_COMPID/2], cMemBank[KP11_PRODVER/2], bound, retc);

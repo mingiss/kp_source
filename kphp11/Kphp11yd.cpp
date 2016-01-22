@@ -2443,9 +2443,9 @@ MemBankType MemBankObj[MemSize/2]
                 0012737, 0000001, KP11_BLOCK_PROCESSING,
 /* 00031750/ */ 0005701,
                 0001402,
+// KP_RC_KEY_CHECK_INTERN_RTN_END:
                 0005037, KP11_BLOCK_PROCESSING,
 
-// KP_RC_KEY_CHECK_INTERN_RTN_END:
 /* 00031760/ */ CALL, HP11_ENC_INI_BUF,
 
 // atsakymo siuntimas
@@ -2496,8 +2496,8 @@ MemBankType MemBankObj[MemSize/2]
                 0105737,
                          HP11_RC_INI_BUF+(unsigned char *)&IniDataBuf.m_bCheckFlash-(unsigned char *)&IniDataBuf,
                 0001402,   // neprirista ir prie atmintuko - griztam is RC, isvalom KP11_BLOCK_PROCESSING
-/* 00032130/ */ JMP, KP_RC_KEY_CHECK_INTERN_RTN_END,  // prirista - atsakymas teigiamas, KP11_BLOCK_PROCESSING nejudinam
-                JMP, KP_RC_KEY_CHECK_INTERN_RTN_CONTINUE_2,
+/* 00032130/ */ JMP, KP_RC_KEY_CHECK_INTERN_RTN_CONTINUE_2,  // prirista - atsakymas teigiamas, KP11_BLOCK_PROCESSING nejudinam
+                JMP, KP_RC_KEY_CHECK_INTERN_RTN_END,
 
 /* 00032140/ */ 0000000, 0000000, 0000000, 0000000,
 /* 00032150/ */ 0000000, 0000000, 0000000, 0000000,
