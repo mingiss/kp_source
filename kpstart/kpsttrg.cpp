@@ -222,7 +222,7 @@ unsigned char prod_name[KP_MAX_FNAME_LEN + 1];
    if(SUCCEEDED(retc)) retc = theApp.GetIniProdNameDec(prod_name);
    if(SUCCEEDED(retc)) retc = theApp.GetIniBound(&bound);
 
-   if(SUCCEEDED(retc)) retc = theApp.CheckReg(theApp.m_hInstance, lic_entered? NULL : &lic_entered, True);
+   if(SUCCEEDED(retc)) retc = theApp.CheckReg(theApp.m_hInstance, lic_entered? NULL : &lic_entered, True, False, True);
 
 // -------------------------------
 #if FALSE
@@ -294,7 +294,7 @@ extern "C" __declspec(dllexport)
 #endif
 HRESULT KpsTest()
 {
-return(theApp.CheckReg(theApp.m_hInstance, NULL, False, False, False));
+return(theApp.CheckReg(theApp.m_hInstance, NULL));
 }
 
 

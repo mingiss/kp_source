@@ -1678,7 +1678,7 @@ private:
 
 //-----------------------
 public:
-   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = False, bool bRunTime = False, bool bVerbose = True);
+   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = False, bool bRunTime = False, bool bVerbose = False);
                               // compares stored installation key with computer ID,
                               //    requests an input of new key if unsuccessfull
                               //    pbLicEntered - returns True, if lic. entering dialog was opened

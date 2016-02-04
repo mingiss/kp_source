@@ -1,6 +1,6 @@
 // ---------------
 // kpsttreg.cpp
-// produkto licencijos registracijos per libkpsttrg.a pavyzdys
+// produkto licencijos registracijos / tikrinimo per libkpsttrg.a pavyzdys
 //
 
 #include <iostream>
@@ -18,7 +18,8 @@ int main()
 
     if (SUCCEEDED(retc))
     {
-        retc = KpsReg();
+        retc = KpsTest();
+        // retc = KpsReg();
         int prod_ver = GetProdVer();
         cout << "Produktas " << prod_ver << " " <<
             (SUCCEEDED(retc)? "" : "ne") << "uzregistruotas" << endl;
