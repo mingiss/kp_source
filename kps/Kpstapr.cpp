@@ -2451,6 +2451,7 @@ PutLogMessage_("RetrieveBolt() 2: [%s]", reg_url);
 #  endif // #  ifndef KPST_PRODGRP_NO_SVR_REQUEST
    }
    if(SUCCEEDED(retc)) rcv_buf[read] = Nul;
+   else rcv_buf[0] = Nul;
 PutLogMessage_("RetrieveBolt() 3: [%s]", rcv_buf);
 
 // ------------------------- skanuojam priimtà varþtà
@@ -6901,23 +6902,28 @@ int lic_high = 0;
    {
       read = KP_MAX_FILE_LIN_LEN;
       retc = sock_ptr->RcvHttpMsg(rcv_buf, &read, False);
-
-#if FALSE // #if TRUE // #ifdef Debug //
-static char str_buf[1000];
-// if(SUCCEEDED(retc))
-{
-sprintf(str_buf, "rcv_buf[%d] >>>", read);
-strcat(str_buf, (const char *)rcv_buf);
-strcat(str_buf, "<<<");
-// KP_TRACE(str_buf);
-KpMsgOutF(str_buf);
-}
-#endif
    }
 
    if(SUCCEEDED(retc))
+      rcv_buf[read] = Nul;
+   else
+      rcv_buf[0] = Nul;
+
+// #if FALSE // #if TRUE // #ifdef Debug //
+static char str_buf[KP_MAX_FILE_LIN_LEN + 200];
+// if(SUCCEEDED(retc))
+{
+sprintf(str_buf, "SCH() 1: rcv_buf[%d] >>>", read);
+strcat(str_buf, (const char *)rcv_buf);
+strcat(str_buf, "<<<");
+// KP_TRACE(str_buf);
+// KpMsgOutF(str_buf);
+PutLogMessage_(str_buf);
+}
+// #endif
+
+   if(SUCCEEDED(retc))
    {
-      rcv_buf[read]=Nul;
       pnts=strstr(rcv_buf, KPST_REG_OK_short);
       if(pnts != null)
       {
@@ -7290,9 +7296,11 @@ PutLogMessage_("CHKRG() 6.2: stmod: %d regmod: %d verb: %d retc: %x", m_iKpStMod
 
 PutLogMessage_("CHKRG() 6.22: kompid: %d %d", cMemBank[KP11_COMPID/2], KpstRand(cMemBank[KP11_COMPID/2]));
 
+PutLogMessage_("CHKRG() 6.220: verb: %d", bVerbose);
          if (bVerbose)
          {
 
+PutLogMessage_("CHKRG() 6.221: retc: %x", retc);
          if((retc == KP_E_KWD_NOT_FOUND) || (retc == KP_E_ILL_CODE) || (retc == KP_E_REFUSED) || (retc == KP_E_EXPIRED) ||
             (retc == KP_E_FILE_FORMAT)) // ðitaip gaunasi, kai failo nëra – EOF duoda tik po pirmos eilutës perskaitymo
          {
@@ -7470,15 +7478,19 @@ PutLogMessage_("CHKRG() 6.23: kompid: %d", cMemBank[KP11_COMPID/2]);
             } // else // if((!ci_direct) && ((num_of_lics==0) || (m_iKpStMode!=KpStarterMode)))
 
          } // if((retc == KP_E_KWD_NOT_FOUND) || (retc==KP_E_ILL_CODE) || (retc == KP_E_REFUSED))
+
          else
-         {
             if(FAILED(retc)) retc = KpErrorProc.OutputErrorMessage(retc, null, TRUE, __FILE__, __LINE__, 0L);
 
+         } // if (bVerbose)
+
+
 // kreipiamës á serverá dël terminuotø licencijø skaitikliø atnaujinimo
-            if((bTestRestDays ||
-               (m_iKpStMode == KpStRegMode) || (m_iKpStMode == KpStIpSvrMode)) // (m_iKpStMode != KpStarterMode))
-               && SUCCEEDED(retc))
-            {
+PutLogMessage_("CHKRG() 6.0: trd: %d", bTestRestDays);
+         if((bTestRestDays ||
+            (m_iKpStMode == KpStRegMode) || (m_iKpStMode == KpStIpSvrMode)) // (m_iKpStMode != KpStarterMode))
+            && SUCCEEDED(retc))
+         {
 // int rest_days_init_sav;
 //             EmuTv.GetHp11Variable(&rest_days_init_sav, KP11_REST_DAYS_INIT);
 #if TRUE // FALSE
@@ -7491,15 +7503,15 @@ PutLogMessage_("CHKRG() 6.1: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_in
 #endif
 
 // KpMsgOutF("CHKR 3 %x", retc);
-               if(SUCCEEDED(retc)) retc = SendCodeHttp(S_OK, KPST_HTTP_REGISTER, True, bRunTime);
+            if(SUCCEEDED(retc)) retc = SendCodeHttp(S_OK, KPST_HTTP_REGISTER, True, bRunTime);
 // KpMsgOutF("CHKR 4 %x", retc);
 // PutLogMessage_("CHKR 4 %x", retc);
-               if(SUCCEEDED(retc)) retc = TestKey();
+            if(SUCCEEDED(retc)) retc = TestKey();
 
 // int rest_days_init_new;
-//             EmuTv.GetHp11Variable(&rest_days_init_new, KP11_REST_DAYS_INIT);
+//          EmuTv.GetHp11Variable(&rest_days_init_new, KP11_REST_DAYS_INIT);
 
-               if(/* (rest_days_init_new != rest_days_init_sav) && */ SUCCEEDED(retc)) terms_downloaded = True;
+            if(/* (rest_days_init_new != rest_days_init_sav) && */ SUCCEEDED(retc)) terms_downloaded = True;
 
 #if TRUE // FALSE
 // int lic_high, rest_days_init;
@@ -7509,11 +7521,8 @@ EmuTv.GetHp11Variable(&rest_days_init, KP11_REST_DAYS_INIT);
 EmuTv.GetHp11VariableLong(&rest_mins, KP11_REST_MINS);
 PutLogMessage_("CHKRG() 6.2: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init, rest_mins);
 #endif
-               if((retc == KP_E_NO_CONN) || (retc == KP_E_TRANS_ERR)) retc = S_OK; // ignoruojam nepavykusá ryðá
-            }
+            if((retc == KP_E_NO_CONN) || (retc == KP_E_TRANS_ERR)) retc = S_OK; // ignoruojam nepavykusá ryðá
          }
-
-         } // if (bVerbose)
 
 //       if(ci_direct) retc0=SaveCompID(False); if(SUCCEEDED(retc)) retc=retc0;
 

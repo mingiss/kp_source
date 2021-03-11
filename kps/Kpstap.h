@@ -3,7 +3,7 @@
 //
 
 //
-// 2013-03-03  mp  m_bMDImaximized – sending Ctrl+Shift+L to Adobe Reader flag – only one time  
+// 2013-03-03  mp  m_bMDImaximized – sending Ctrl+Shift+L to Adobe Reader flag – only one time
 // 2015-08-30  mp  atskirtas Kpsttrg bibliotekos kreipiniai KpsInit(), KpsClose() ir KpsTest() (tik patikrinimui be registracijos)
 //
 
@@ -298,11 +298,11 @@ typedef struct
 #define KPST_BOLT_FILE  ((const unsigned char *)"/remid.php")
 #define KPST_BOLT_FORMAT ("?fizid=%ld")
 
-#define KPST_ENCODE_FILE_URL   ((const unsigned char *)"http://www.tev.lt/get_file.php") // "http://serveri5.ll/lentyna/get_file.php") // 
+#define KPST_ENCODE_FILE_URL   ((const unsigned char *)"http://www.tev.lt/get_file.php") // "http://serveri5.ll/lentyna/get_file.php") //
 #define KPST_ENCODE_FILE_PATTERN ((const unsigned char *)"get_file.php")
 
-#define KPST_GRP_LOGIN_URL   ((const unsigned char *)"http://www.tev.lt/grplogin.php") // "http://serveri5.ll/lentyna/grplogin.htm") // 
-#define KPST_GRP_LOGIN_FILE  ((const unsigned char *)"/grplogin.php") // "/lentyna/grplogin.htm") // 
+#define KPST_GRP_LOGIN_URL   ((const unsigned char *)"http://www.tev.lt/grplogin.php") // "http://serveri5.ll/lentyna/grplogin.htm") //
+#define KPST_GRP_LOGIN_FILE  ((const unsigned char *)"/grplogin.php") // "/lentyna/grplogin.htm") //
 
 // kpstisvr.exe SockListenProc() komandos
 #define KPSTIP_ALIVE_CMD ((const unsigned char *)"CD=")
@@ -405,7 +405,7 @@ extern const KpChar KpstGrpMacroPrc[];
 #define KPST_GRP_MENU_FNAME ((const unsigned char *)"DAT0\\StartGrp.htm")
 #define KPST_GRP_ALIVE_PRESENT_FILE_NAME ((const unsigned char *)"ProdsAlive.txt")
 #define KPST_GRP_FONAS_FNAME ((const unsigned char *)"DAT0\\StartGrp_fonas.gif")
-extern long StartGrp_fonas_len; 
+extern long StartGrp_fonas_len;
 extern unsigned char StartGrp_fonas[];
 
 // ------------
@@ -1024,7 +1024,7 @@ typedef union
                                                       // po uþkodavimo nuliai gali atsirasti ir bet kur eilutës vidury – slaptaþodþio ilgá reikia atsiminti
                                                       //    prieð uþkodavimà
    int iAlignmentField; // unused field for alignment to 4-bytes cluster boundary
-} CryptPwd; 
+} CryptPwd;
 
 class KpStApp : public KpCommonApp
 {
@@ -1266,31 +1266,31 @@ public:
    bool m_bSaveTestUpdatesToIni; // ar saugoti TestUpdates á .ini failà
 
    DWORD m_lGrpRefreshThreadId;                       // periodiðko meniu nusikrovimo threadas ProcessGrpThreadProc()
-   volatile bool m_bGrpDownloadListProcessing;        // former m_bGrpDownloadFNameListProcessing;   
+   volatile bool m_bGrpDownloadListProcessing;        // former m_bGrpDownloadFNameListProcessing;
                                                       // semaforas – m_bGrpDownLoadThreadList arba m_GrpDownloadFNameList uþimtas
-   volatile KpTreeEntry *m_GrpDownLoadThreadList;  // former m_bGrpDownLoadThreadTree; 
+   volatile KpTreeEntry *m_GrpDownLoadThreadList;  // former m_bGrpDownLoadThreadTree;
                                                       // setupus siunèianèiø StartGrpDownloadThreadProc() ir produktus naikinanèiø StartUninstThreadProc() threadø sàraðas – semaforas meniu atnaujinimo blokavimui
                                                       // jei yra bent vienas áraðas, m_lGrpRefreshThreadId meniu neatnaujina, tik siuntimo threadas StartGrpDownloadThreadProc() atnaujina progreso slankiklá
-                                                      // sàraðas naudojamas ir threadø stabdymui iðeinant 
+                                                      // sàraðas naudojamas ir threadø stabdymui iðeinant
    volatile KpTreeEntry *m_GrpDownloadFNameList;   // ðiuo metu StartGrpDownloadThreadProc() siunèiamø <setup> lokaliø failø vardø sàraðas – semaforas dvigubo paklikinimo blokavimui
                                                       // formuojamas klikinant <mfree> ðablonà
-                                                      // jeigu sàraðe toks downloadinamas failas jau yra, naujo nesiunèiam 
+                                                      // jeigu sàraðe toks downloadinamas failas jau yra, naujo nesiunèiam
 
 // int m_iCompId; // kompiuterio ID StartGrp.exe KpStApp::GrpSvrRequest(), iðkvieèiamam ne ið pagrindinio threado
 
    volatile bool m_bGrpRefreshFlg; // ar reikia atnaujinti paleidimo meniu (nereikia, kai, pvz., ðiuo metu narðoma iðorëje)
-   volatile bool m_bGrpRefreshGlobalFlg; // jei == False, ðita reikðme atstatinëjami trumpam iðjungtas m_bGrpRefreshFlg (jei iðjungimas ávyko m_bGrpRefreshFlg trumpam iðjungus)  
+   volatile bool m_bGrpRefreshGlobalFlg; // jei == False, ðita reikðme atstatinëjami trumpam iðjungtas m_bGrpRefreshFlg (jei iðjungimas ávyko m_bGrpRefreshFlg trumpam iðjungus)
 
    bool m_bForceGrpCfg; // ar krauti eiliná cfg (StartGrp meniu) forsuotai – nustatomas po tinklo klaidø; taip pat kol kas naudojamas ir kaip off-line indikatorius
-   
+
    bool m_bLogin; // pagrindinis langas logino bûsenoje, ne lentynos darbinëj – kad þinotume, kur gráþt ið iðoriniø narðymø
-   
+
 // >>>>>> 2013-03-03  mp
 #ifdef KPST_MULTI_DOCS
-   bool m_bMDImaximized; // sending Ctrl+Shift+L to Adobe Reader flag – maximize MDI doument – only single time  
+   bool m_bMDImaximized; // sending Ctrl+Shift+L to Adobe Reader flag – maximize MDI doument – only single time
 #endif
 // <<<<<< 2013-03-03  mp
-   
+
 // --------------------------------------------------------------------
    KpStApp(void);
    virtual ~KpStApp(void);
@@ -1300,7 +1300,7 @@ public:
                         bool bCommonAppInitiated = False,   // bCommonAppInitiated = True, jeigu norim InitCommonApp(), tada atidaryt langus, o tik tada InitStApp()
                                                             // (nes ilgai uþtrunka ir langai neatsidaro)
                         bool *pbLicEntered = NULL,          // perduoda á CheckReg()
-                        bool bCheckReg = True);              // jei False – netikrina ir neregistruoja licencijos                                               
+                        bool bCheckReg = True);              // jei False – netikrina ir neregistruoja licencijos
    HRESULT SetTimers(void);
 
    HRESULT StartCmd(const unsigned char *lpszCmdLine = null, const unsigned char *lpszPwd = null); // jei lpszCmdLine != null ar lpszPwd != null,
@@ -1333,8 +1333,8 @@ public:
                                     // galima naudoti nesaugius algoritmus ir negalima rekursiðkai kreiptis á HP11
 
    // hRetc - retc pries iskvieciant, kad nesidubliuotu pranesimai;
-   // iTxtFileLocation – rezultatai.txt failo aplankas 
-   HRESULT CloseStApp(HRESULT hRetc, LocalPaths iTxtFileLocation); 
+   // iTxtFileLocation – rezultatai.txt failo aplankas
+   HRESULT CloseStApp(HRESULT hRetc, LocalPaths iTxtFileLocation);
 
 private:
    void InitKeyFmts(void);
@@ -1678,14 +1678,14 @@ private:
 
 //-----------------------
 public:
-   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = False, bool bRunTime = False, bool bVerbose = False);
+   HRESULT CheckReg(HINSTANCE hInst, bool *pbLicEntered = NULL, bool bTestRestDays = True, bool bRunTime = False, bool bVerbose = False);
                               // compares stored installation key with computer ID,
                               //    requests an input of new key if unsuccessfull
                               //    pbLicEntered - returns True, if lic. entering dialog was opened
-                              // bRunTime – iðkvietimas ið ProcessRestDays() – iðvedinëti praneðimus apie pasibaigusá lic. galiojimà ir 
+                              // bRunTime – iðkvietimas ið ProcessRestDays() – iðvedinëti praneðimus apie pasibaigusá lic. galiojimà ir
                               //    neinicializuoti RestDays kintamøjø – jie dinamiðkai dekrementuojami, o CheckReg() iðkvietimas dar prieð iðsaugojimà
-                              // bVerbose – jei False – nieko neklausinëja, neávedinëja licencijø ir neregistruoja, tik gràþina info apie licencijos legalumà   
-                              
+                              // bVerbose – jei False – nieko neklausinëja, neávedinëja licencijø ir neregistruoja, tik gràþina info apie licencijos legalumà
+
 
    HRESULT RemoveReg(HRESULT hRetc, HINSTANCE hInst); // removes installation
                                                       // hRetc - retc pries iskvieciant, kad nesidubliuotu pranesimai
@@ -1726,16 +1726,16 @@ private:
 //----------------------- programinio komp. id RemID funkcijos (varþtas)
    HRESULT GetSavedBoltRegSingle(HKEY hQueryKey, const unsigned char *lpszSubKey, long *plBolt); // skaito RemID ið vieno registro rakto
    HRESULT GetSavedBoltFileSingle(const unsigned char *lpszPath, const unsigned char *pkg_name, long *plBolt); // skaito RemID ið vieno failo
-   HRESULT GetSavedBolt(long *plBolt); // skaito áraðytà slaptuose failuose ir registre RemID, jei neranda – KP_E_KWD_NOT_FOUND 
+   HRESULT GetSavedBolt(long *plBolt); // skaito áraðytà slaptuose failuose ir registre RemID, jei neranda – KP_E_KWD_NOT_FOUND
    HRESULT SaveBoltRegSingle(HKEY hQueryKey, const unsigned char *lpszSubKey, long lBolt);
    HRESULT SaveBoltFileSingle(const unsigned char *lpszPath, const unsigned char *pkg_name, long lBolt, const SYSTEMTIME *p_tt);
-   HRESULT SaveBolt(long lBolt); // iðsaugoja RemID slaptuose failuose ir registre 
+   HRESULT SaveBolt(long lBolt); // iðsaugoja RemID slaptuose failuose ir registre
    HRESULT RetrieveBolt(long *plBolt, long lFizId); // priima RemID ið remid.php
                                        // jei negauna – sugeneruoja atsitiktiná RemID
                                        // jeigu viskas gerai, gautà RemID reikðmæ iðsaugoja kompe
    HRESULT GetBolt(long *plBolt, long lFizId); // RemID perskaito ið slaptø failø (iðsikvieèia GetSavedBolt()), jeigu dar nëra – parsisiunèia ið serverio (RetrieveBolt())
    static long AddBoltFormula(long lFizId, long lRemID); // pati FizID komponavimo su RemID formulë, rezultatas – KompID
-   HRESULT AddBolt(long *plCompId); // prikomponuoja RemID prie FizID, gaunamas KompID; iðkvieèia GetBolt() 
+   HRESULT AddBolt(long *plCompId); // prikomponuoja RemID prie FizID, gaunamas KompID; iðkvieèia GetBolt()
 
 //-----------------------
 // algoritmas:
@@ -1940,9 +1940,9 @@ public:
 
    HRESULT ProcessRestDays(void); // RestDays taimerio procedûra – minuèiø dekrementavimas ir iðsaugojimas
                                   // iðkvieèia ProcessRestDays_RC() per KP_RC_CALLBACK
-                                  
+
    bool RestDaysWarningShowed(void); // gràþina True, jei praneðimas apie pasibaigusá/besibaigiantá lic. galiojimo laikà kà tik iðvestas – iðvedinëti nereikia // former m_iRestDaysWarningShowed
-                                  
+
 // -------------
 private:
    HRESULT TestKey(void);     // tests whether new entered or previous saved installation key
@@ -1983,8 +1983,8 @@ private:
                // hRetc - retc pries iskvieciant, kad nesidubliuotu pranesimai
                // lpszHttpQuery – KPST_HTTP_REGISTER ar KPST_HTTP_REMOVE
                // bRecKey – ar priimti diegimo raktà kaip atsakymà
-               // bForcedTestRestDaysMsg – iðkvietimas ið ProcessRestDays() iðvedinëti praneðimus apie pasibaigusá lic. galiojimà, 
-               //    nekreipiant dëmesio á m_iRestDaysWarningShowed – èia WM_TIMER praneðimas, negerai, jeigu tyliai nusiims  
+               // bForcedTestRestDaysMsg – iðkvietimas ið ProcessRestDays() iðvedinëti praneðimus apie pasibaigusá lic. galiojimà,
+               //    nekreipiant dëmesio á m_iRestDaysWarningShowed – èia WM_TIMER praneðimas, negerai, jeigu tyliai nusiims
 
    HRESULT EnterNewKey(HINSTANCE hInst, const unsigned char *lpszHint1);  // iveda is klaviaturos diegimo rakta
    HRESULT OpenKeyWindow(const unsigned char *lpszHint1);  // sukuria ir atidaro diegimo rakto dialogo langa
@@ -1999,7 +1999,7 @@ public:
    HRESULT TestFlash(void);
 
 // ---------------------------
-   HRESULT GetProdVerRegVariableStr(unsigned char *lpszValBuf, /* const unsigned char *lpszPublisher, */ int iProdVer, const unsigned char *lpszVarName); 
+   HRESULT GetProdVerRegVariableStr(unsigned char *lpszValBuf, /* const unsigned char *lpszPublisher, */ int iProdVer, const unsigned char *lpszVarName);
                                                 // suranda ProdVer registro parametro reikðmæ
                                                 // ið pradþiø ið HKCU, jei neranda – ið HKLM
                                                 // lpszValBuf[KP_MAX_FNAME_LEN + 1], nes ten daugiausia katalogai/failø keliai (diegimo, paleidimo, iðmetimo)
@@ -2133,8 +2133,8 @@ public:
 
    HRESULT SwitchGrpMenuRefreshing(bool bRefreshFlg); // stabdo/atstato StartGrp() paleidimo meniu periodiná atnaujinimà
 
-   HRESULT GetIniUserPwdEnc(long lCryptCode, unsigned char *lpszCryptPwdOutBuf); // iðtraukia GetIniUserPwd() ir uþkoduoja HTTP uþklausoms ir saugojimui registre, 
-                                                      // lpszCryptPwdOutBuf[2 * TV_TAG_LEN + 1] – ðeðioliktainis buferis   
+   HRESULT GetIniUserPwdEnc(long lCryptCode, unsigned char *lpszCryptPwdOutBuf); // iðtraukia GetIniUserPwd() ir uþkoduoja HTTP uþklausoms ir saugojimui registre,
+                                                      // lpszCryptPwdOutBuf[2 * TV_TAG_LEN + 1] – ðeðioliktainis buferis
 
    HRESULT GrpSvrRequest(bool bMainThread, bool bOutMsg);   // kreipiasi á http://www.tev.lt/prodgrp.php?lic=8R34-GR52-5U2U&ProdVar=1
                                                             // atsakymà padeda á m_lpszGrpCfgBuf
@@ -2272,9 +2272,9 @@ public:
 
    HRESULT AppendGrpDownloadThreadListEntry(DWORD lCurThread); // sukuria naujà m_GrpDownLoadThreadList áraðà
    HRESULT DeleteGrpDownloadThreadListEntry(DWORD lCurThread); // naikina m_GrpDownLoadThreadList áraðà
-// HRESULT DumpGrpDownloadThreadList(unsigned char *lpszOutStrBuf, bool bSetSemaphore); 
+// HRESULT DumpGrpDownloadThreadList(unsigned char *lpszOutStrBuf, bool bSetSemaphore);
                               // iðveda m_GrpDownLoadThreadList elementus á lpszOutStrBuf[KP_MAX_FILE_LIN_LEN + 1]
-                              // bSetSemaphore – ar stabdyti m_bGrpDownloadListProcessing 
+                              // bSetSemaphore – ar stabdyti m_bGrpDownloadListProcessing
 
    HRESULT StartGrpDownloadThread(const unsigned char *lpszAppNameUTF8);
                               // paleidþia konkretaus produkto siuntimo threadà StartGrpDownloadThreadProc() StartGrp.exe
@@ -2295,7 +2295,7 @@ public:
    HRESULT SaveGrpMenu(void); // raðo m_lpszGrpMenu[] á KPST_GRP_MENU_FNAME, prieð tai, gal bût, uþkoduodama
    HRESULT GenStartMenu(bool bLauncher);  // skanuoja m_pGrpCfgNode ir pagamina m_lpszGrpMenu
                                           // jei bLauncher == True, savo <item> áraðà praleidþia
-   HRESULT LoadGrpImg(/* const */ XmlNode *pFather, int iTag, KpBmpData *pBmpPars, HBITMAP *pBitmap, XmlNode **pChild = NULL); 
+   HRESULT LoadGrpImg(/* const */ XmlNode *pFather, int iTag, KpBmpData *pBmpPars, HBITMAP *pBitmap, XmlNode **pChild = NULL);
                                           // ieðko iTag tarp pFather vaikø, uþkrauna parsisiøstà failà á *pBitmap; pagalbinë GenStartMenu() paprogramë
                                           // á *pChild gràþina surastà mazgà
 
@@ -2318,7 +2318,7 @@ public:
    HRESULT ProcDoLogin(const unsigned char *lpszGetPars); // lpszGetPars: "?ButNum=1&user=vardas&pwd=slaptazodis"
 
 // --------------------------
-   HRESULT GrpSendDiagMsg(const unsigned char *lpszDiagMsgPars); // diagnostinio praneðimo siuntimas; lpszDiagMsgPars – failø, kuriuos reikia prikabinti prie praneðiomo, vardø sàraðas, atskirtas kabliataðkiais 
+   HRESULT GrpSendDiagMsg(const unsigned char *lpszDiagMsgPars); // diagnostinio praneðimo siuntimas; lpszDiagMsgPars – failø, kuriuos reikia prikabinti prie praneðiomo, vardø sàraðas, atskirtas kabliataðkiais
 
 // --------------------------
    static HRESULT WaitTilWndCloses(const unsigned char *lpszWndName, const unsigned char *lpszProdName); // tikrina, ar uþdarytas langas
@@ -2359,7 +2359,7 @@ class KpStGrpSubster
    const KpChar *m_iazLic;          // makrokomandos {lic} reikðmë
 
    const KpChar *m_iazPrc;          // makrokomandos {prc} reikðmë
-   
+
    KpChar *m_iazTemp;         // makrokomandos {temp} reikðmë
 
 // darbiniai laukai

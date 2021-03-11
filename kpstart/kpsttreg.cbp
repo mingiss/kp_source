@@ -41,6 +41,7 @@
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="kpsttreg.cpp" />
+		<Unit filename="kpsttrg.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

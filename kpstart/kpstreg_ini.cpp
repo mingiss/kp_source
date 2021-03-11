@@ -1,5 +1,5 @@
 //---------------------------- 
-// Kpstart Start .ini data 
+// Kpstart Registr .ini data 
 // 
 #include "envir.h" 
 #include "iBshn.h" 

@@ -115,6 +115,7 @@
 		<Unit filename="..\kphp11\Kphp11y.cpp" />
 		<Unit filename="..\kphp11\Kphp11yd.cpp" />
 		<Unit filename="..\kps\Kpstap.cpp" />
+		<Unit filename="..\kps\Kpstap.h" />
 		<Unit filename="..\kps\Kpstapa.cpp" />
 		<Unit filename="..\kps\Kpstapd.cpp" />
 		<Unit filename="..\kps\Kpstapl.cpp" />
