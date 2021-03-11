@@ -846,7 +846,7 @@ KpMsgOutF(dir_buf);
 // :00402318 EB14                    jmp 0040232E
      )
    {
-// PutLogMessage("KpStApp::InitStApp(): CHKRG");
+PutLogMessage("KpStApp::InitStApp(): CHKRG");
       retc = CheckReg(m_hInstance, pbLicEntered);
 // :0040231A 8D5DFC                  lea ebx, dword[ebp-04]
 // :0040231D 8B45DC                  mov eax, dword[ebp-24]
@@ -856,6 +856,7 @@ KpMsgOutF(dir_buf);
 // :0040232B 8945D8                  mov dword[ebp-28], eax
 
 // KpMsgOutF_1("InitStApp [2]: %x", retc);
+PutLogMessage_("InitStApp [2]: %x", retc);
 
    } // if(m_iKpStMode == KpStarterMode) ...
 

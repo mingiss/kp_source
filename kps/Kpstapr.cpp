@@ -595,6 +595,10 @@ KP_TRACE(buf);
 // --------------------------- gràþinam FizID
    if((plPhysWithoutBolt != NULL) && SUCCEEDED(retc)) *plPhysWithoutBolt = new_comp_id;
 
+#ifdef Debug
+new_comp_id = 827;
+#endif
+
 // --------------------------- Varþtas
    if((comp_id_mode & KPST_COMPID_BOLT) && SUCCEEDED(retc)) retc = AddBolt(&new_comp_id);
 
@@ -2424,7 +2428,7 @@ unsigned char reg_url[KP_MAX_FNAME_LEN + 1];
    {
       strcpy(reg_url, KPST_BOLT_FILE);
       sprintf((char *)reg_url + strlen(reg_url), KPST_BOLT_FORMAT, lFizId);
-// PutLogMessage_("RetrieveBolt() 2: [%s]", reg_url);
+PutLogMessage_("RetrieveBolt() 2: [%s]", reg_url);
    }
 
 #ifndef KPST_PRODGRP_NO_SVR_REQUEST
@@ -2447,10 +2451,20 @@ unsigned char reg_url[KP_MAX_FNAME_LEN + 1];
 #  endif // #  ifndef KPST_PRODGRP_NO_SVR_REQUEST
    }
    if(SUCCEEDED(retc)) rcv_buf[read] = Nul;
-// PutLogMessage_("RetrieveBolt() 3: [%s]", rcv_buf);
+PutLogMessage_("RetrieveBolt() 3: [%s]", rcv_buf);
 
 // ------------------------- skanuojam priimtà varþtà
    if(SUCCEEDED(retc)) sscanf((const char *)rcv_buf, "%ld", plBolt);
+#ifdef Debug
+   if(SUCCEEDED(retc)) sscanf(
+//    "4038146270",
+//    "1126850184",
+//    "1105235993",
+//    "1274304729",
+      "3129010187",
+         "%ld", plBolt);
+#endif
+PutLogMessage_("RetrieveBolt() 3.2: %ld", *plBolt);
 
 // ----------------------------- generuojam lokalø varþtà
    if(FAILED(retc))
@@ -2484,8 +2498,11 @@ HRESULT retc = S_OK;
 
    if(SUCCEEDED(retc))
    {
+#ifndef Debug
       retc = GetSavedBolt(plBolt);
-      if(FAILED(retc)) retc = RetrieveBolt(plBolt, lFizId);
+      if(FAILED(retc))
+#endif
+         retc = RetrieveBolt(plBolt, lFizId);
    }
 
 return(retc);
@@ -5957,6 +5974,8 @@ int inst_code4=0;
       inst_code2 /* m_iInstCode2 */ = prod_ver^ch_sum_rand;
       inst_code3 /* m_iInstCode3 */ = comp_id /* m_iCompId */ ^ ch_sum_rand;
 
+PutLogMessage_("KpStApp::CIC 1 %d", comp_id);
+
 #if FALSE // #ifdef Debug
 char str_buf[1000];
 sprintf(str_buf, "lic: %d prodver: %d compid: %d sum: %d summod: %d randsum: %d %x",
@@ -7249,7 +7268,7 @@ PutLogMessage_("CHKRG() 5: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init
          if(SUCCEEDED(retc)) retc = CalcInstCode();
 
          if(
-             SUCCEEDED(retc) || 
+             SUCCEEDED(retc) ||
              ((retc == KP_E_FILE_FORMAT) && (!bound) && (!ch_fl))
            ) retc = TestKey();
 
@@ -7266,6 +7285,10 @@ EmuTv.GetHp11Variable(&rest_days_init, KP11_REST_DAYS_INIT);
 EmuTv.GetHp11VariableLong(&rest_mins, KP11_REST_MINS);
 PutLogMessage_("CHKRG() 6: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init, rest_mins);
 #endif
+
+PutLogMessage_("CHKRG() 6.2: stmod: %d regmod: %d verb: %d retc: %x", m_iKpStMode, KpStRegMode, bVerbose, retc);
+
+PutLogMessage_("CHKRG() 6.22: kompid: %d %d", cMemBank[KP11_COMPID/2], KpstRand(cMemBank[KP11_COMPID/2]));
 
          if (bVerbose)
          {
@@ -7286,6 +7309,8 @@ PutLogMessage_("CHKRG() 6: l_h: %d r_d_i: %d r_m: %ld", lic_high, rest_days_init
             if(pbLicEntered) *pbLicEntered = True;
 
 // KpMsgOutF_4("ci_direct: %d num_of_lics: %d m_iKpStMode: %d KpStarterMode: %d", ci_direct, num_of_lics, m_iKpStMode, KpStarterMode);
+
+PutLogMessage_("CHKRG() 6.5: stmod: %d regmod: %d", m_iKpStMode, KpStRegMode);
 
             if(
                (
@@ -7368,6 +7393,8 @@ const unsigned char *par_ptr = (const unsigned char *)(m_plCmdLineArgs->GetValue
 // KpMsgOutF_4("%04x-%04x-%04x-%04x", cMemBank[KP11_INST_CODE1/2], cMemBank[KP11_INST_CODE2/2], cMemBank[KP11_INST_CODE3/2], cMemBank[KP11_INST_CODE4/2]);
 
                   } // if(((num_of_lics==0) || (m_iKpStMode!=KpStarterMode)) && SUCCEEDED(retc))
+
+PutLogMessage_("CHKRG() 6.23: kompid: %d", cMemBank[KP11_COMPID/2]);
 
                   if(SUCCEEDED(retc))
                   {

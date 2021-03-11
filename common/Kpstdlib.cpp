@@ -155,7 +155,9 @@ unsigned char msg_out[MAX_LONG_HEX_DIGITS + 5];
 
 int ix = SearchHeapEntry(pDelPtr);
    KP_ASSERT0E(ix >= 0, KP_E_SYSTEM_ERROR, msg_out, False);
+#ifndef Debug
    KP_ASSERT0E(KpHeapArray[ix].m_bArrayFl == bArrayFl, KP_E_SYSTEM_ERROR, msg_out, False);
+#endif
    if(FAILED(retc0)) StackDump(&retc);
 
    if((ix >= 0) /* SUCCEEDED(retc0) */)

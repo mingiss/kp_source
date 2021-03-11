@@ -25,4 +25,5 @@
 *.cbTemp
 *.depend
 *~
-
+*.tmp
+*.lb1

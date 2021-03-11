@@ -1,4 +1,4 @@
-/*-------------------------------------------------------------------------*/
+﻿/*-------------------------------------------------------------------------*/
 /* kpsgrm.cpp                                                                */
 /*  batch file creation from parameter list file for group file processing */
 /*     uses macro file as template and supersedes all $1,                  */
@@ -222,7 +222,9 @@ int main(int argc, char **argv)
           fgetss(parms,FileLinLen,fils1);
           rerr1|=ferror(fils1); retc|=rerr1;
           feof1|=feof(fils1); retc|=feof1;
-          if(!retc) filmcr(parms,mcrfn,modfl);
+          if(!retc)
+              if (parms[0] != '#') // !!!! TODO: perkompiliuot su komentaru
+		          filmcr(parms, mcrfn, modfl);
           retc|=werr; retc|=feof3; retc|=rerr3;
         } while(!retc);
         werr|=(fclose(modfl)!=0);

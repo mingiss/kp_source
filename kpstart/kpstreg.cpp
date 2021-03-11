@@ -238,7 +238,9 @@ KpMsgOut("1. InitStApp", IDI_INFORMATION /* IDI_ASTERISK */, KP_MB_TESTI);
 
 // KpMsgOutF_0("KpsTestReg() 7");
 
-   if(SUCCEEDED(retc)) retc = theApp.CheckReg(theApp.m_hInstance, lic_entered?NULL:&lic_entered);
+   if(SUCCEEDED(retc)) retc = theApp.CheckReg(theApp.m_hInstance, lic_entered?NULL:&lic_entered, False, False, True);
+
+PutLogMessage_("WinMain() chkrg retc: %x", retc);
 
 // -------------------------------
 #ifdef Debug

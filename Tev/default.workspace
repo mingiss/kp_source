@@ -21,9 +21,9 @@
 		<Project filename="../kpstart/kpstarti.cbp" />
 		<Project filename="../kpstart/kpstisvr.cbp" />
 		<Project filename="../kpstart/kpstisvrTDM.cbp" />
-		<Project filename="../kpstart/kpstreg.cbp" />
-		<Project filename="../kpstart/kpstun.cbp" />
-		<Project filename="../kpstart/kpsttrg.cbp" active="1" />
+		<Project filename="../kpstart/kpstregd.cbp" />
+		<Project filename="../kpstart/kpstund.cbp" active="1" />
+		<Project filename="../kpstart/kpsttrg.cbp" />
 		<Project filename="../kpstart/kpsttrg32.cbp" />
 		<Project filename="../kpstart/kpsttrg_creg.cbp" />
 		<Project filename="../kpstart/kpsttrgTDM.cbp" />
@@ -76,5 +76,7 @@
 		<Project filename="../kpstart/decfdf85.cbp" />
 		<Project filename="../kpstart/kpsttreg.cbp" />
 		<Project filename="../kpstart/kpsttun.cbp" />
+		<Project filename="../kpstart/kpstreg.cbp" />
+		<Project filename="../kpstart/kpstun.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

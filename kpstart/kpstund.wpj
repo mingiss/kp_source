@@ -4,10 +4,10 @@ projectIdent
 VpeMain
 1
 WRect
-0
-0
-10240
-9898
+-32
+-40
+9984
+10320
 2
 MProject
 3
@@ -30,8 +30,8 @@ VComponent
 WRect
 0
 0
-5667
-4141
+5664
+4140
 0
 0
 9
@@ -39,5 +39,5 @@ WFileName
 11
 kpstund.tgt
 0
-10
+11
 7

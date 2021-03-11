@@ -2404,9 +2404,10 @@ KpSockHdTag http_tag;
                                                                   // Connection: keep-alive
                                                                   // Connection: Keep-Alive
                                                                   // Connection: Keep-Alive, TE
+                                                                  // Connection: Upgrade, Keep-Alive
                                                                   //    jei "keep-alive" - tada "Keep-Alive:"
                         if(strcmp(pnts, "close")==0){}                  //    jei "TE" - tada "TE:"
-                        else if((strcmp(pnts, "keep-alive")==0) || (strstr(pnts, "Keep-Alive")==pnts)){}
+                        else if((strcmp(pnts, "keep-alive")==0) || strstr(pnts, "Keep-Alive")){}
                         else
                         {
                            KpErrorProc.OutputErrorMessage(KP_E_MSG_FORMAT, pnts, False, __FILE__, __LINE__, m_iMsgType);
