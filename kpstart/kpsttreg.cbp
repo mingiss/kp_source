@@ -14,9 +14,28 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-std=c++11" />
+					<Add option="-m32" />
+					<Add option="-DEnvir=15" />
+					<Add option="-DKPSTEDI_MODE=6" />
+					<Add option="-DMsgLang=1" />
+					<Add option="-DBUFFERSIZE=4096" />
+					<Add option="-DMingwVer=482" />
+					<Add directory="F:\source\common\" />
+					<Add directory="..\Tev\iBook" />
+					<Add directory="..\Tev\lzdsh" />
+					<Add directory="F:\kp\source\Tev\xml\tux_gecko\include" />
+					<Add directory="F:\source\kpt" />
+					<Add directory="..\common" />
+					<Add directory="F:\kp\source\kpt" />
+					<Add directory="F:\kp\source\kphp11" />
+					<Add directory="F:\kp\source\Tev\rtf" />
+					<Add directory="F:\kp\source\Tev\tex" />
+					<Add directory="F:\source\xml" />
+					<Add directory="F:\kp\source\Tev\xml" />
+					<Add directory="F:\kp\source\kps" />
 				</Compiler>
 				<Linker>
-					<Add library="F:\kp\source\kpstart\tux_XFS\lib\libkpsttrg.a" />
 					<Add library="gdi32" />
 					<Add library="user32" />
 					<Add library="kernel32" />
@@ -30,13 +49,17 @@
 					<Add library="Iphlpapi" />
 					<Add library="ntdll" />
 					<Add library="comdlg32" />
+					<Add library="lib\libKP.a" />
 				</Linker>
 			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add directory="F:\source\common\" />
+			<Add directory="..\Tev\iBook" />
 		</Compiler>
+		<Unit filename="kpstart_ini.cpp" />
 		<Unit filename="kpstt.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>

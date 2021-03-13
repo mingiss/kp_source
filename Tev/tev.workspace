@@ -6,5 +6,6 @@
 		<Project filename="../kpstart/kpsttreg.cbp" active="1" />
 		<Project filename="../kpstart/kpsttun.cbp" />
 		<Project filename="../kpstart/kpsttart.cbp" />
+		<Project filename="../kpstart/KP.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
